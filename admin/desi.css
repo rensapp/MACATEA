@@ -1,0 +1,141 @@
+
+
+.table4{
+	border-collapse: collapse;
+	width: 100%;
+	color: #282828;
+	font-family: monospace;
+	font-size: 20px;
+	text-align: center;
+	margin-top:190px;
+	padding: 0;
+	
+}
+
+
+th{
+	background-color: #000000;
+	color: white;
+	width: auto;
+}
+tr:nth-child(even){
+	background-color: #DFF5CE;
+	width: auto;
+	
+}
+tr:nth-child(odd) {
+	background-color: #86B049;
+	width: auto;
+	}
+	
+span.title{
+	position: absolute;
+	padding: 3px;
+	float: left;
+	font-size: 50px;
+	margin-left: 0%;
+	margin-top: 50px;
+	font-family: 'Bahnschrift SemiBold',SANS-SERIF;
+	color:#000000; 
+	text-shadow: 2px 2px #008000;
+	
+}
+span.title1{
+	position: fixed;
+	padding: 3px;
+	float: left;
+	font-size: 50px;
+	margin-left: 0%;
+	margin-top: 50px;
+	font-family: 'Bahnschrift SemiBold',SANS-SERIF;
+	color:#000000; 
+	text-shadow: 2px 2px #008000;
+	
+}
+.delete{
+	height: 20px;
+	padding: 8px;
+	padding-bottom: 12px;
+	font-size: 10px;
+	font-weight: bold;
+	color: white;
+	background: #006400;
+	border:none;
+	border-radius: 5px;
+
+}
+
+.inactive{
+	padding: 5px;
+	font-size: 9px;
+	color: white;
+	background: #808080;
+	border:none;
+	border-radius: 5px;
+}
+.banned{
+	padding: 5px;
+	font-size: 9px;
+	color: white;
+	background: #FF0000 ;
+	border:none;
+	border-radius: 5px;
+}
+.disable {
+	color: black;
+}
+
+a{
+	
+	text-decoration: none;
+}
+
+body{
+	font-size: 120%;
+   background-color: #AFE1AF	;
+}
+
+
+
+
+.pagination a {
+  color: #DFF5CE;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.button {
+    display: block;
+	position: fixed;
+    width: 215px;
+    height: 95px;
+    background: #000000;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+	 border: 2px solid #228B22;
+    color:#4CBB17	;
+    font-weight: bold;
+	font-size: 30px;
+    line-height: 25px;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

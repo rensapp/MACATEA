@@ -1,0 +1,9 @@
+total cost of all user and number of order
+<h3>₱<?= $total_pendings;?>/(<?= $number_of_orders; ?>)</h3> 
+
+staff
+staff@gmail.com
+staff123
+user
+rensapp30@gmail.com
+test1234

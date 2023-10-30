@@ -1,0 +1,142 @@
+.table4{
+	border-collapse: collapse;
+	width: 100%;
+	color: #282828;
+	font-family: monospace;
+	font-size: 20px;
+	text-align: center;
+	margin-top:190px;
+	padding: 0;
+	
+}
+
+th{
+	background-color: #E84766;
+	color: #000000;
+	width: auto;
+}
+tr:nth-child(even){
+	background-color: #B000B9;
+	width: auto;
+	
+}
+tr:nth-child(odd) {
+	background-color: #E1A9E4;
+	width: auto;
+	}
+	
+.delete{
+
+	padding: 5px;
+	font-size: 9px;
+	color: white;
+	background: #006400;
+	border:none;
+	border-radius: 5px;
+
+}
+
+
+a{
+	
+	text-decoration: none;
+}
+
+body{
+	font-size: 120%;
+   background-color: #AFE1AF	;
+}
+
+
+form,.content{
+
+	width: 70%;
+	margin:0px 0px 20px 210px;
+	margin-top: 0px;
+	padding: 20px;
+	border: 2px solid #000000;
+	background: white;
+	border-radius: 0px 0px 10px 10px;
+
+}
+.headerA{
+	width: 70%;
+	margin:0px 0px 0px 210px;
+	margin-top: 40px;
+	background: #008000;
+	text-align: center;
+	border: 2px solid #000000;
+	border-bottom: none;
+	border-radius: 10px 10px 0px 0px ;
+	padding: 20px;
+	font-family: 'Bahnschrift SemiBold',SANS-SERIF;
+	color:#000000; 
+	text-shadow: 2px 2px #eee;
+
+}
+.input-groupA{
+	margin: 10px 0px 10px 0px;
+}
+
+.input-groupA label{
+	display: block;
+	text-align: left;
+	margin: 3px;
+
+}
+
+.input-groupA input{
+	height: 30px;
+	width: 100%;
+	padding: 5px 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border:2px solid grey;
+
+}
+.btnA{
+
+	padding: 10px;
+	font-size: 15px;
+	color: white;
+	background: #008000;
+	border:none;
+	border-radius: 5px;
+	margin-top: 15px;
+}
+.btnB{
+
+	padding: 10px;
+	font-size: 15px;
+	color: white;
+	background: #000000;
+	border:none;
+	border-radius: 5px;
+	margin-top: 15px;
+	cursor: pointer;
+}
+.error{
+  color: #a94442; 
+  font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

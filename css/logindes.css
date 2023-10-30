@@ -1,0 +1,167 @@
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+	body {
+  font-size: 120%;
+  background-image:url('loginbg.png');
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-size:100% 100%;
+}
+.header {
+  width: 80%;
+  margin: 0px auto;
+  margin-top: 80px;
+  font-size: 26px;
+  position: center;
+  color: #000000;
+  font-family: 'Rockwell',Rockwell;
+  font-weight: bold;
+  text-align: center;
+
+}
+.login {
+  width: 80%;
+  margin: 0px auto;
+  margin-top: 30px;
+  position: center;
+  color: #000000;
+  font-family: 'Rockwell',Rockwell;
+  font-weight: bold;
+  text-align: center;
+
+}
+form, .content {
+  width: 35%;
+  margin: 0px auto;
+  position: center;
+  padding: 20px;
+  border: 0px solid #B0C4DE;
+  background: white;
+  border-radius: 0px 0px 10px 10px;
+}
+.input-group {
+  margin: 10px 0px 10px 25px;
+}
+.input-group label {
+  display: block;
+  text-align: left;
+  margin: 3px;
+}
+.input-group input {
+  height: 30px;
+  width: 93%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.input-groupbtn button {
+  height: 70px;
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  cursor: pointer;
+  margin-top: 40px;
+}
+.input-groupRegister button {
+  height: 70px;
+  width: 35.3%;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 3px;
+  border: 1px solid gray;
+  cursor: pointer;
+margin: 15px 0;
+position: absolute; 
+bottom:140;  
+left: 32.1%;
+}
+.input-groupReg button {
+  height: 70px;
+  width: 33.5%;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 3px;
+  border: 1px solid gray;
+  cursor: pointer;
+margin: 15px 0;
+position: absolute; 
+bottom:-5;  
+left: 32.1%;
+}
+
+.btn {
+  padding: 10px;
+  color: #008000;
+  width: 93%;
+  margin-top: 20px;
+  height: 60px;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  background: #000000;
+  border: none;
+  border-radius: 5px;
+}
+
+.error{
+  color: #a94442; 
+  font-size: 15px;
+}
+.errortop{
+  color: #a94442; 
+  font-size: 15px;
+  margin-left: 30px;
+}
+
+.message{
+  color: #a94442; 
+  font-size: 15px;
+
+}
+.forgot a {
+  height: 70px;
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 360px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+    font-family: "Roboto", sans-serif;
+}
+
+.forgot a:hover {
+  height: 70px;
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #355E3B;
+    font-family: "Roboto", sans-serif;
+}
+
+.or {
+  width: 80%;
+  margin: 0px auto;
+  font-size: 26px;
+  position: center;
+  color: #000000;
+  font-family: 'Rockwell',Rockwell;
+  font-weight: bold;
+  text-align: center;
+
+}
