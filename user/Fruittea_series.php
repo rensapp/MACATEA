@@ -50,10 +50,10 @@
 				while($fetch = mysqli_fetch_assoc($select_products)){
       		?>
 			<div class="col-lg-2 col-md-4 col-sm-6 product_con mt-3 p-4 text-center rounded">
-             <img src="../product/<?php echo $fetch['image_dir']; ?>" class="rounded" width="165px">
+             <img src="../product/<?php echo $fetch['image_dir']; ?>" class="rounded" width="165px" height="165px">
             <h4 class="ft-color mt-2"><?php echo $fetch['name']; ?></h4>
 			<h6 class="text-dark text-center">Starts at</h6>
-            <h4 class="mt-2 black">₱<?php echo $fetch['price']; ?></h4>
+            <h4 class="mt-2 black">₱<?php echo $fetch['medium']; ?></h4>
 			
 			<input type="hidden" name="customer_id" value="<?php echo $id ?>">
 			
