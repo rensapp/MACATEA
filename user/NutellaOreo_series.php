@@ -1,171 +1,89 @@
-<?php include ('../includes/sign-inheader.php');
+<?php include ('../user/userHeader.php');
 	if (isset($_SESSION['user'])) {
 	$id=$_SESSION['user']['id'];
-
-	$res=mysqli_query($db,"SELECT * FROM users WHERE id='$id' ");
-	while($crow=mysqli_fetch_array($res))
-	{
-	$delivery_type =  $crow['delivery_type'];
-	}
 	} 
-	
+
+		$cat4 = true;
 ?> 
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" name="viewport" content="width-device-width, initial-scale=1"/>
-		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		   <link rel="stylesheet" href="../css/finalsstyle.css?v=<?php echo time();?>">
-		   <title> Nutella Oreo Series </title>
-	</head>
-<body> 
-
-<div class="box-container" style="display: grid; grid-template-columns: repeat(auto-fit, 10rem); gap:0px; justify-content: center; margin-top: 40px;">
-
-<ul class="one">
-<div class="main" style="width: 100px; height: 200px;">
-	<div class="box">
-			<span class="circle-image">
-				<a href="Milktea_series.php">
-					<img src="../product/Milktea_Series.jpg"/>
-				</a>
-			</span>
-	</div>
-<p style="height: 200px;padding-top: 120px; font-size: 15px; width: 102px;"> Milktea Series </p>
-</div>
-</ul>
-
-<ul class="one">
-<div class="main" style="width: 100px; height: 200px;">
-	<div class="box">
-			<span class="circle-image">
-				<a href="Oreo_series.php">
-				<img src="../product/Oreo_Series.jpg"/>
-				</a>
-			</span>
-	</div>
-<p style="height: 200px;padding-top: 120px; font-size: 15px; padding-left: 8px;"> Oreo Series </p>
-</div>
-</ul>
-
-<ul class="one">
-<div class="main" style="width: 100px; height: 200px;">
-	<div class="box">
-			<span class="circle-image">
-				<a href="Nutella_series.php">
-					<img src="../product/Nutella_Series.jpg"/>
-				</a>
-			</span>
-	</div>
-<p style="height: 200px;padding-top: 120px; font-size: 15px; width: 101px;">  Nutella Series</p>
-</div>
-</ul>
-
-<ul class="active">
-<div class="main" style="width: 100px; height: 200px;">
-	<div class="box">
-			<span class="circle-image">
-				<a href="NutellaOreo_series.php">
-					<img src="../product/NutellaOreo_Series.png"/>
-				</a>
-			</span>
-	</div>
-<p style="height: 200px;padding-top: 120px; font-size: 15px; padding-left: 8px;width: 101px;"> Nutella Oreo Series </p>
-</div>
-</ul>
-
-<ul class="one">
-<div class="main" style="width: 100px; height: 200px;">
-	<div class="box">
-			<span class="circle-image">
-				<a href="Fruittea_series.php">
-					<img src="../product/FruitTea_Series.jpg"/>
-				</a>
-			</span>
-	</div>
-<p style="height: 200px;padding-top: 120px; font-size: 15px; padding-left: 8px;width: 101px;">  Fruit Tea / Yakult </p>
-</div>
-</ul>
-
-<ul class="one">
-<div class="main" style="width: 100px; height: 200px;">
-	<div class="box">
-			<span class="circle-image">
-				<a href="Refresher_series.php">
-					<img src="../product/Refresher_series.jpg"/>
-				</a>
-			</span>
-	</div>
-<p style="height: 200px;padding-top: 120px; font-size: 15px; padding-left: 19px;width: 101px;">  Refresher </p>
-</div>
-</ul>
-
-<ul class="one">
-<div class="main" style="width: 100px; height: 200px;">
-	<div class="box">
-			<span class="circle-image">
-				<a href="MacteaSpecial.php">
-					<img src="../product/Mactea_Special.jpg"/>
-				</a>
-			</span>
-	</div>
-<p style="height: 200px;padding-top: 120px; font-size: 15px;width: 116px;">  Mactea Special </p>
-</div>
-</ul>
-
-<ul class="one">
-<div class="main" style="width: 100px; height: 200px;">
-	<div class="box">
-			<span class="circle-image">
-				<a href="MacCoffee_series.php">
-					<img src="../product/MacCoffee.jpg"/>
-				</a>
-			</span>
-	</div>
-<p style="text-align: center; height: 200px;padding-top: 120px; "> Mac Coffee </p>
-</div>
-</ul>
-</div>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
+        crossorigin="anonymous">
+	<title>Nutella Oreo Series</title>
+</head>
+<style>
+.ft-color{
+	color:#007b00;
+}
+.black{
+	color:black;
+}
+.product_con{
+	border: 2px solid white;
+	background-color: #f0f2f5;
+}
 
 
+</style>
+<body>
 
-<div class="main-container">
-	<section class="products">
-
-   <div class="title"> Nutella Oreo Series </div>
-	  <div class="box-container">
-
-				 <?php
-require '../includes/conn.php';
-      $select_products = mysqli_query($conn, "SELECT * FROM `product` WHERE  category=4");
-      if(mysqli_num_rows($select_products) > 0){
-         while($fetch = mysqli_fetch_assoc($select_products)){
-      ?>
-         <div class="box">
-             <img src="../product/<?php echo $fetch['image_dir']; ?>" alt="" width="310px">
-            <h3><?php echo $fetch['name']; ?></h3>
-            <div class="price">₱<?php echo $fetch['price_16oz']; ?></div>
+	<?php include ('../user/categories.php'); ?>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="text-center text-dark fw-semibold">Nutella Oreo Series</h1>
+			</div>
+		</div>
+		<div class="row">
+			
+			<?php
+				require '../includes/conn.php';
+				$select_products = mysqli_query($conn, "SELECT * FROM `product` WHERE  category=4");
+				if(mysqli_num_rows($select_products) > 0){
+				while($fetch = mysqli_fetch_assoc($select_products)){
+      		?>
+			<div class="col-lg-2 col-md-4 col-sm-6 product_con mt-3 p-4 text-center rounded">
+             <img src="../product/<?php echo $fetch['image_dir']; ?>" class="rounded" width="165px">
+            <h4 class="ft-color mt-2"><?php echo $fetch['name']; ?></h4>
+			<h6 class="text-dark text-center">Starts at</h6>
+            <h4 class="mt-2 black">₱<?php echo $fetch['price']; ?></h4>
 			
 			<input type="hidden" name="customer_id" value="<?php echo $id ?>">
-			<button class="btn" data-toggle="modal" type="button" data-target="#update_modal<?php echo $fetch['id']?>"> ADD </button>';
 			
-         </div>
+			<button 
+				class="btn btn-success btn-block mt-3"
+				style="width: 100%;"
+				data-bs-toggle="modal"
+				type="button"
+				data-bs-target="#update_modal<?php echo $fetch['id']?>">
+				Add to cart
+			</button>
+		</div>
 
-
-      <?php
-        	include 'addNutellaOreo.php'; }
-      } else {
-	
-			echo "<p align='center'> <font color=black font size='50' font face='courier' size='6pt'><b>NO PRODUCT AVAILABLE</b></font> </p>";
-	  }
-      ?>
-			</div>
-		</section>
+      		<?php
+        		include '../user/modal_product.php'; }
+				} else {
+			
+					echo "<p align='center'> <font color=black font size='50' font face='courier' size='6pt'><b>NO PRODUCT AVAILABLE</b></font> </p>";
+				}
+			?>
+		
+		</div>
 	</div>
 
 
+<script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" 
+    crossorigin="anonymous">
+</script>  
 <script src="../js/jquery-3.2.1.min.js"></script>	
-<script src="../js/bootstrap.js"></script>	
-
-</body>	
+</body>
 </html>

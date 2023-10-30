@@ -15,7 +15,7 @@
         rel="stylesheet" 
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
         crossorigin="anonymous">
-	<title>MacCoffee Seiries</title>
+	<title>MacCoffee Series</title>
 </head>
 <style>
 .ft-color{
