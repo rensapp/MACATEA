@@ -90,6 +90,54 @@ if (!isLoggedIn()) {
                         <i class="fas fa-user-circle fa-2x text-gray-300"></i>
                       </div>
                 </div>
+				
+				<div style="margin:240px 10px 10px 10px; width: 350px; height: 100px; background-color: #000000; border-radius: 10px 10px 10px 10px; position: absolute;" class="col-md-12 mb-3">
+							<p style="margin:50px 10px 10px 80px; font-size: 15px; font-family: 'Bahnschrift SemiBold',SANS-SERIF; color:#4CBB17; text-shadow: 2px 2px #2E8B57;">
+						<?php 
+						$status = 'completed';
+                        $query = "SELECT COUNT(*) FROM `orders` where order_status = '$status'";
+                        $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                        while ($row = mysqli_fetch_array($result)) {
+                            echo "$row[0]";
+                          }
+                        ?> Record(s) </p>
+					   <div style="font-size: 20px; margin:-55px 10px 10px 77px; font-family: 'Bahnschrift SemiBold',SANS-SERIF; color:#4CBB17; text-shadow: 2px 2px #2E8B57;">COMPLETED ORDERS</div>
+					    <div style="margin-left: 20px; margin-top: -33px; margin-bottom: 8px;font-size: 20px; text-shadow: 2px 2px #2E8B57; color: #4CBB17;"class="col-auto">
+                        <i class="fas fa-user-circle fa-2x text-gray-300"></i>
+                      </div>
+					   <a href="Orders.php" style="color: green;  margin:80px; font-family: 'Bahnschrift SemiBold',SANS-SERIF; color:#4CBB17; text-shadow: 2px 2px #2E8B57;" class="btn">VIEW</a>
+                </div>
+				
+			
+				 	 <div style="margin:240px 10px 10px 377px; width: 350px; height: 100px; background-color: #000000; border-radius: 10px 10px 10px 10px; position: absolute;" class="col-md-12 mb-3">
+							<p style="margin:50px 10px 10px 80px; font-size: 15px; font-family: 'Bahnschrift SemiBold',SANS-SERIF; color:#4CBB17; text-shadow: 2px 2px #2E8B57;">
+						<?php
+			 date_default_timezone_set("Asia/Manila");
+			$todaydate = date ('y-m-d');
+			
+			$status = 'completed';
+			$select_cart = mysqli_query($db,  "SELECT * FROM `orders` where date = '$todaydate' && order_status = '$status'");
+			if(mysqli_num_rows($select_cart) > 0){
+				while($fetch_cart = mysqli_fetch_assoc($select_cart)){
+			$sql = "SELECT  SUM(paid_amount) from `orders` where date = '$todaydate'&& order_status = '$status'";
+				$result = $db->query($sql);
+			//display data on web page
+				while($row = mysqli_fetch_array($result)){
+		 $row['SUM(paid_amount)'];
+		$grand_total =  $row['SUM(paid_amount)'];
+				}
+			}
+		 } else{
+			 $grand_total = 0;
+		 }
+      ?>
+	Daily Sales: ₱<?= $grand_total; ?> 
+	   </p>
+					  <div style="font-size: 20px; margin:-55px 10px 10px 77px; font-family: 'Bahnschrift SemiBold',SANS-SERIF; color:#4CBB17; text-shadow: 2px 2px #808080;">TOTAL DAILY SALES</div>
+					  <div style="margin-left: 20px; margin-top: -33px; font-size: 20px; text-shadow: 2px 2px #2E8B57; color: #4CBB17;"class="col-auto">
+                        <i class="fas fa-money-check-alt fa-2x text-gray-300"></i>
+                      </div>
+                </div>
 
 		</div>
 		<!--wrapper end-->

@@ -61,6 +61,7 @@ if (!isLoggedIn()) {
 		<th>First name</th>
 		<th>Last name</th>
 		<th>Email</th>
+		<th> Branch </th>
 		<th>Contact Number</th>
 		<th>Action</th>
 		</tr>
@@ -79,6 +80,15 @@ if (!isLoggedIn()) {
                     <td><?php echo $crow["last_name"]; ?></td>
 					<td><?php echo $crow["email"]; ?></td>
                     <td><?php echo $crow['mobile_number']; ?></td>
+					<td>
+			<?php if($crow['branch_num'] == 1){
+				echo "San Antonio branch";
+			} elseif($crow['branch_num'] == 2){
+				echo "Luna branch";
+			} else {
+				echo "Calendola branch";
+			}?>
+		</td>
 					<td> <a href="editStaff.php?id=<?php echo $crow["id"]; ?>"><button  class="delete" style="background-color: #4682B4;">Edit</button></a>
 					<a href="DeleteStaff.php?id=<?php echo $crow["id"]; ?>"><button  class="delete" style="background-color: #B22222;">Delete</button></a> </td>
                 </tr>

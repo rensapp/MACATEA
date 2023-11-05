@@ -31,7 +31,7 @@ $id=$_GET["id"];
   <link rel="icon" href="../images/mactea.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="edit.css?v=<?php echo time();?>"/>
-  
+  <link rel="icon" href="../images/mactea.png">
 </head>
 <body>
 <style>

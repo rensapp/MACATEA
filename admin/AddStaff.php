@@ -24,7 +24,7 @@ if (!isLoggedIn()) {
 			<div class="header">
 				<div class="header-menu">
 					<div class="title">  <img src="../images/mactea-home.png" alt="..." height="70"></div>
-					<div class="title"> Admin </div>
+					<div class="title"> Staff </div>
 					<div class="sidebar-btn">
 						<i class="fas fa-bars"></i>
 					</div>
@@ -41,7 +41,7 @@ if (!isLoggedIn()) {
 	<h2>ADD STAFF</h2>
 </div>
 
-<form method="post" action="AddAdmin.php">
+<form method="post" action="AddStaff.php">
  <link rel="stylesheet" href="adding.css?v=<?php echo time();?>"/>
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 	<div class="input-groupA">
@@ -66,6 +66,20 @@ if (!isLoggedIn()) {
 		<input type="email" name="email" autocomplete="off" value="<?php echo $email; ?>">
 			<p class="error"> <?php if (isset($errors['email'])) echo $errors ['email'];?></p>
 				<p class="error"> <?php if (isset($errors['email1'])) echo $errors ['email1'];?></p>
+	</div>
+	<div class="input-groupA">
+		<label>Branch No: </label>
+		<select name="branch_num">
+		<option> SELECT BRANCH </option>
+						<?php
+					$link =mysqli_connect ("localhost","root","","mactea");
+					$que=mysqli_query($link,"SELECT * FROM branches");
+					while($col=mysqli_fetch_array($que)){
+				?>
+				<option><?php echo $col['br_name']; ?></option>
+					<?php } ?>
+</select>  
+		<p class="error"> <?php if (isset($errors['branch_num'])) echo $errors ['branch_num'];?></p>
 	</div>
 	<div class="input-groupA">
 		<label>Password</label>
@@ -93,7 +107,7 @@ if (!isLoggedIn()) {
 			<p class="error"> <?php if (isset($errors['password3'])) echo $errors ['password3'];?></p>
 	</div>
 	<div class="input-groupA">
-		<button type="submit" class="btnA" name="registerStaff">Add Admin</button>
+		<button type="submit" class="btnA" name="registerStaff">Add Staff</button>
 	</div>
 </form>
 <!--main container end-->
