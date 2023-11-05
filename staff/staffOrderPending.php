@@ -52,12 +52,12 @@ if(isset($_GET['delete'])){
     <?php include 'staffHeader.php'; ?>
 
 <div class="container-fluid p-lg-5 p-md-2">
-   <h1 class="title text-center fw-bold">Pending Orders</h1>
+   <h1 class="title text-center fw-bold">Pending orders</h1>
    <div class="row box-container d-flex">
       <!-- <div class="box-container d-flex"> -->
 
       <?php
-         $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE order_status = 'pending' AND order_branch = $staff_brNum");
+         $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE order_status = 'Pending' AND order_branch = $staff_brNum");
          $select_orders->execute();
          if($select_orders->rowCount() > 0){
             while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
@@ -77,7 +77,7 @@ if(isset($_GET['delete'])){
             if($fetch_orders['payment_mode'] == "online"){?>
                <p class="fw-semibold"> Payment Status : <span style="color:
                <?php 
-                  if($fetch_orders['payment_status'] == 'pending'){ 
+                  if($fetch_orders['payment_status'] == 'Pending'){ 
                      echo 'orange'; 
                   }
                   else{
@@ -89,11 +89,11 @@ if(isset($_GET['delete'])){
                <input type="hidden" name="order_id" value="<?= $fetch_orders['order_id']; ?>">
                <select name="update_orderStatus" class="drop-down mb-3 form-select" onchange="enableUpdateButton(this)">
                   <option value="" selected><?= $fetch_orders['order_status']; ?></option>
-                  <option value="preparing" style="color:black;">Preparing</option>
+                  <option value="Preparing" style="color:black;">Preparing</option>
                </select>
                <div class="flex-btn text-center">
-                  <input type="submit" name="update_order" class="btn option-btn btn-success px-lg-5 px-md-3" value="update" disabled>
-                  <a href="staffOrderPending.php?delete=<?= $fetch_orders['order_id']; ?>" class="btn delete-btn btn-danger px-lg-5 px-md-3" onclick="return confirm('delete this order?');">delete</a>
+                  <input type="submit" name="update_order" class="btn option-btn btn-success px-lg-5 px-md-3" value="Update" disabled>
+                  <a href="staffOrderPending.php?delete=<?= $fetch_orders['order_id']; ?>" class="btn delete-btn btn-danger px-lg-5 px-md-3" onclick="return confirm('delete this order?');">Delete</a>
                </div>
             </form>
          </div>

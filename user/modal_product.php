@@ -102,6 +102,7 @@
                                     }
                                 ?>
 						</div>
+						<br>
 						<div class="form-group">
 							<label>Awesome Add Ons</label> <br>
 							<input type="radio" name="addons" value="0, No Sinker" checked> No Sinker <br>
@@ -114,6 +115,7 @@
 							<input type="radio" name="addons" value="30, Cream Cheese"> Cream Cheese +₱30 <br>
 							<input type="radio" name="addons" value="30,  Nutella"> Nutella +₱30 <br>
 						</div>
+						<br>
 						<?php if($delivery_type == 'None') { ?>
 						<div class="form-group">
 							<label>Select Delivery type</label> <br>

@@ -53,7 +53,7 @@ if (!isLoggedIn()) {
 
 				<?php
 				if(!empty($fetch_orders['payment_id'])){
-					if($fetch_orders['payment_status'] == "pending" || empty($fetch_orders['payment_status'])){
+					if($fetch_orders['payment_status'] == "Pending" || empty($fetch_orders['payment_status'])){
 					include ('../payment/retrievePaymentLink.php');
 					}
 				} ?>
@@ -62,7 +62,7 @@ if (!isLoggedIn()) {
 				if($fetch_orders['payment_mode'] == "online"){ ?>
 				<p> Payment Status : <span class="fw-bold" style="color:
 				<?php 
-					if($fetch_orders['payment_status'] == 'pending'){ 
+					if($fetch_orders['payment_status'] == 'Pending'){ 
 						echo 'orange'; 
 					}
 					else{
@@ -72,7 +72,7 @@ if (!isLoggedIn()) {
 
 				<p> Order Status : <span class="fw-bold" style="color:
 				<?php 
-				if($fetch_orders['order_status'] == 'pending'){ 
+				if($fetch_orders['order_status'] == 'Pending'){ 
 					echo 'orange'; 
 				}
 				else{
@@ -81,7 +81,7 @@ if (!isLoggedIn()) {
 				
 
 				<?php
-				if($fetch_orders['payment_status'] == "pending"){ ?>
+				if($fetch_orders['payment_status'] == "Pending"){ ?>
 					<div class="text-center">
     					<a href="<?php echo $fetch_orders['payment_url']?>" target="_blank" class="btn btn-primary btn-block m-0">Pay Online</a>
 					</div>

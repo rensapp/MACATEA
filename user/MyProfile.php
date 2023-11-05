@@ -116,13 +116,13 @@ if (!isLoggedIn()) {
 			
 			<div class="input-group">
 				<label class="ms-2 mt-2">First Name</label>
-				<input style="margin-left: 80px;" type="text" name="first_name" pattern="[A-Za-z]*" title="No number & special characters allowed." value="<?php echo $crow['first_name']; ?>"/>
+				<input style="margin-left: 80px;" class="rounded" type="text" name="first_name" pattern="[A-Za-z]*" title="No number & special characters allowed." value="<?php echo $crow['first_name']; ?>"/>
 				<p class="error"> <?php if (isset($errors['first_name'])) echo $errors ['first_name'];?> <?php if (isset($errors['first_name1'])) echo $errors ['first_name1'];?></p>
 			</div>
 	
 			<div class="input-group">
 				<label class="ms-2 mt-2">Last Name</label>
-				<input style="margin-left: 80px;" type="text" name="last_name" pattern="[A-Za-z]*" title="No number & special characters allowed." value="<?php echo $crow['last_name']; ?>"/>
+				<input style="margin-left: 80px;" class="rounded" type="text" name="last_name" pattern="[A-Za-z]*" title="No number & special characters allowed." value="<?php echo $crow['last_name']; ?>"/>
 				<p class="error"> <?php if (isset($errors['last_name'])) echo $errors ['last_name'];?></p>
 			</div>
 	

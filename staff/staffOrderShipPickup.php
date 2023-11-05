@@ -80,32 +80,32 @@ if(isset($_GET['delete'])){
     <?php include 'staffHeader.php'; ?>
 
 <div class="container-fluid p-lg-5 p-md-2">
-   <h1 class="title text-center fw-bold">Orders to be Shipped or Picked</h1>
+   <h1 class="title text-center fw-bold">Orders to be deliver or to picked-up</h1>
    <div class="row box-container d-flex">
       <!-- <div class="box-container d-flex"> -->
 
       <?php
-         $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE order_status = 'ship-pickup' AND order_branch = $staff_brNum");
+         $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE order_status = 'Deliver-pickup' AND order_branch = $staff_brNum");
          $select_orders->execute();
          if($select_orders->rowCount() > 0){
             while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
       ?>
          <div class="col-lg-4 col-md-6 p-2 box border border-success rounded">
             <p class="fw-semibold"> Order id : <span><?= $fetch_orders['order_id']; ?></span> </p>
-            <p class="fw-semibold"> placed on : <span><?= $fetch_orders['placed_on']; ?></span> </p>
-            <p class="fw-semibold"> name : <span><?= $fetch_orders['name']; ?></span> </p>
-            <p class="fw-semibold"> email : <span><?= $fetch_orders['email']; ?></span> </p>
-            <p class="fw-semibold"> mobile number : <span><?= $fetch_orders['phone']; ?></span> </p>
-            <p class="fw-semibold"> address : <span><?= $fetch_orders['address']; ?></span> </p>
-            <p class="fw-semibold"> total products : <span><?= $fetch_orders['products']; ?></span> </p>
-            <p class="fw-semibold"> total price : <span>₱<?= $fetch_orders['paid_amount']; ?>/-</span> </p>
-            <p class="fw-semibold"> payment method : <span><?= $fetch_orders['payment_mode']; ?></span> </p>
+            <p class="fw-semibold"> Placed on : <span><?= $fetch_orders['placed_on']; ?></span> </p>
+            <p class="fw-semibold"> Mame : <span><?= $fetch_orders['name']; ?></span> </p>
+            <p class="fw-semibold"> Email : <span><?= $fetch_orders['email']; ?></span> </p>
+            <p class="fw-semibold"> Mobile number : <span><?= $fetch_orders['phone']; ?></span> </p>
+            <p class="fw-semibold"> Address : <span><?= $fetch_orders['address']; ?></span> </p>
+            <p class="fw-semibold"> Total products : <span><?= $fetch_orders['products']; ?></span> </p>
+            <p class="fw-semibold"> Total price : <span>₱<?= $fetch_orders['paid_amount']; ?>/-</span> </p>
+            <p class="fw-semibold"> Payment method : <span><?= $fetch_orders['payment_mode']; ?></span> </p>
 
             <?php
             if($fetch_orders['payment_mode'] == "online"){?>
                <p class="fw-semibold"> Payment Status : <span style="color:
                <?php 
-                  if($fetch_orders['payment_status'] == 'pending'){ 
+                  if($fetch_orders['payment_status'] == 'Pending'){ 
                      echo 'orange'; 
                   }
                   else{
@@ -119,11 +119,11 @@ if(isset($_GET['delete'])){
                <input type="hidden" name="order_qty" value="<?= $fetch_orders['product_quantity']; ?>">
                <select name="update_orderStatus" class="drop-down mb-3 form-select" onchange="enableUpdateButton(this)">
                   <option value="" selected disabled><?= $fetch_orders['order_status']; ?></option>
-                  <option value="completed" style="color:black;">Complete</option>
+                  <option value="Completed" style="color:black;">Complete</option>
                </select>
                <div class="flex-btn text-center">
-                  <input type="submit" name="update_order" class="btn option-btn btn-success px-lg-5 px-md-3" value="update" disabled>
-                  <a href="staffOrderShipPickup.php?delete=<?= $fetch_orders['order_id']; ?>" class="btn delete-btn btn-danger px-lg-5 px-md-3" onclick="return confirm('delete this order?');">delete</a>
+                  <input type="submit" name="update_order" class="btn option-btn btn-success px-lg-5 px-md-3" value="Update" disabled>
+                  <a href="staffOrderShipPickup.php?delete=<?= $fetch_orders['order_id']; ?>" class="btn delete-btn btn-danger px-lg-5 px-md-3" onclick="return confirm('delete this order?');">Delete</a>
                </div>
             </form>
          </div>

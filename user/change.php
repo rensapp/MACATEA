@@ -1,4 +1,4 @@
-<?php include '../includes/sign-inheader.php'; ?>
+<?php include '../user/userHeader.php'; ?>
 <?php
 if (!isAdmin()) {
 	$_SESSION['msg'] = "You must log in first";
@@ -21,37 +21,57 @@ if (!isLoggedIn()) {
 	</style>
 <html>
 	<head>
-				<meta charset="UTF-8" name="viewport" content="width-device-width, initial-scale=1"/>
-		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
-		<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
-		   <link rel="stylesheet" href="../css/finalsstyle.css?v=<?php echo time();?>">
-		   
+			<meta charset="UTF-8" name="viewport" content="width-device-width, initial-scale=1"/>
+		  <link 
+			  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+			  rel="stylesheet" 
+			  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
+			  crossorigin="anonymous"> 
 		  <title> Change Password </title>
 	</head>
 <body>
- <div class="header">
-  <h2>Change Password</h2>
- </div>
- 
-<form method="post" action="">
- <div class="input-group">
-  <label>Old Password</label>
-  <input type="password" name="oldpw">
- </div>
- <div class="input-group">
-  <label>New Password</label>
-  <input type="password" name="newpw">
- </div>
- <div class="input-group">
-  <label>Confirm Password</label>
-  <input type="password" name="confirmpw">
- </div>
-  <div class="input-group">
-   <button type="submit" class="btn" name="Confirm"> Confirm </button>
-   <button type="submit" class="btn btn-danger" name="cancel"> Cancel </button>
-  </div>
+  <div class="container border border-dark rounded" style="margin-top: 180px; background-color: #92ca91;">
+    <div class="row text-center p-4">
+      <h2 class="border-bottom border-dark">Change Password</h2>
+    </div>
+    
+    <div class="row mb-3 p-3">
+      <form method="post" action="">
+      <div class="input-group mb-2" style="margin-left: 160px;">
+        <label class="ms-5 me-5 mt-2">Old Password</label>
+        <input type="password" class="w-50" style="margin-left: 70px;" name="oldpw">
+      </div>
+      <div class="input-group mb-2" style="margin-left: 160px;">
+        <label class="ms-5 me-5 mt-2">New Password</label>
+        <input type="password" class="w-50" style="margin-left: 65px;" name="newpw">
+      </div>
+      <div class="input-group" style="margin-left: 160px;">
+        <label class="ms-5 me-5 mt-2">Confirm Password</label>
+        <input type="password" class="w-50" style="margin-left: 40px;" name="confirmpw">
+      </div>
+    </div>
 
- </form>
+    <div class="row mb-3">
+      <div class="col d-none d-lg-block d-md-block">
+		</div>
+      <div class="col-lg-3 col-md-5 col-sm-12">
+        <button type="submit" class="btn btn-success w-100" name="Confirm">Confirm</button>
+      </div>
+      <div class="col-lg-3 col-md-5 col-sm-12">
+        <button type="submit" class="btn btn-danger btn-block w-100" name="cancel">Cancel</button>
+      </div>
+      <div class="col d-none d-lg-block d-md-block">
+		</div>
+    </div>
+
+  </form>
+</div>
+
+<script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" 
+    crossorigin="anonymous">
+</script> 
 </body>
 </html>
 

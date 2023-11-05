@@ -97,7 +97,7 @@ while($row = $result->fetch(PDO::FETCH_ASSOC)){
         </h4>
 
         <input type="hidden" name="clear" value="<?php echo $id ?>">
-        <input type="hidden" name="status" value="<?php echo"pending"; ?>">
+        <input type="hidden" name="status" value="<?php echo"Pending"; ?>">
 
         <div class="form-group mb-2">
             <input type="text" name="name" class="form-control" placeholder="Enter Name" value="<?= $name ?>" required>
@@ -127,7 +127,7 @@ while($row = $result->fetch(PDO::FETCH_ASSOC)){
         <input type="hidden" name="delivery_type" class="form-control" value="<?= $mod ?>" >
         <input type="hidden" name="product_quantity" class="form-control" value="<?= $total_quantity ?>" >
         <input type="hidden" name="order_branch" class="form-control" value="<?= $branch_num ?>" >
-        <input type="hidden" name="payment_status" class="form-control" value="pending" >
+        <input type="hidden" name="payment_status" class="form-control" value="Pending" >
 
         <div class="row">
             <div class="col d-none d-lg-block d-md-block"></div>

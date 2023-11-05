@@ -51,7 +51,7 @@ if(isset($_GET['delete'])){
     <?php include 'staffHeader.php'; ?>
 
 <div class="container-fluid p-lg-5 p-md-2">
-   <h1 class="title text-center fw-bold">Completed Orders</h1>
+   <h1 class="title text-center fw-bold">Completed orders</h1>
    <div class="row box-container d-flex">
       <!-- <div class="box-container d-flex"> -->
 
@@ -63,33 +63,33 @@ if(isset($_GET['delete'])){
       ?>
          <div class="col-lg-4 col-md-6 p-2 box border border-success rounded">
             <p class="fw-semibold"> Order id : <span><?= $fetch_orders['order_id']; ?></span> </p>
-            <p class="fw-semibold"> placed on : <span><?= $fetch_orders['placed_on']; ?></span> </p>
+            <p class="fw-semibold"> Placed on : <span><?= $fetch_orders['placed_on']; ?></span> </p>
             <?php if($fetch_orders['name'] == ""){
 
                }else { ?>
-                  <p class="fw-semibold"> name : <span><?= $fetch_orders['name']; ?></span> </p>
+                  <p class="fw-semibold"> Name : <span><?= $fetch_orders['name']; ?></span> </p>
                <?php } ?>
 
             <?php if($fetch_orders['email'] == ""){
 
                }else { ?>
-                  <p class="fw-semibold"> email : <span><?= $fetch_orders['email']; ?></span> </p>
+                  <p class="fw-semibold"> Email : <span><?= $fetch_orders['email']; ?></span> </p>
                <?php } ?>
             
             <?php if($fetch_orders['phone'] == ""){
 
                }else { ?>
-                  <p class="fw-semibold"> mobile number : <span><?= $fetch_orders['phone']; ?></span> </p>
+                  <p class="fw-semibold"> Mobile number : <span><?= $fetch_orders['phone']; ?></span> </p>
             <?php } ?>
 
             <?php if($fetch_orders['address'] == ""){
 
                }else { ?>
-                  <p class="fw-semibold"> address : <span><?= $fetch_orders['address']; ?></span> </p>
+                  <p class="fw-semibold"> Address : <span><?= $fetch_orders['address']; ?></span> </p>
                <?php } ?>
-            <p class="fw-semibold"> total products : <span><?= $fetch_orders['products']; ?></span> </p>
-            <p class="fw-semibold"> total price : <span>₱<?= $fetch_orders['paid_amount']; ?>/-</span> </p>
-            <p class="fw-semibold"> payment method : <span><?= $fetch_orders['payment_mode']; ?></span> </p>
+            <p class="fw-semibold"> Total products : <span><?= $fetch_orders['products']; ?></span> </p>
+            <p class="fw-semibold"> Total price : <span>₱<?= $fetch_orders['paid_amount']; ?>/-</span> </p>
+            <p class="fw-semibold"> Payment method : <span><?= $fetch_orders['payment_mode']; ?></span> </p>
 
             <?php
             if($fetch_orders['payment_mode'] == "online"){?>
