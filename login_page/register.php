@@ -44,12 +44,12 @@ body {
     <div class="col-lg-2 col-md-1 d-none d-md-block d-lg-block p-0" style="z-index: -1;">
       <div 
         class="bg-image" 
-        style="background-image: url('../images/flipGreenSmall.png');
+        style="background-image: url('../images/flipGreenSmallEdit.png');
         height: 50vh; background-repeat: no-repeat; background-size: cover;">
       </div>
       <div 
         class="bg-image" 
-        style="background-image: url('../images/flipLightGreenSmall.png');
+        style="background-image: url('../images/flipLightGreenSmallEdit.png');
         height: 50vh; background-repeat: no-repeat; background-size: cover;">
       </div>
     </div>

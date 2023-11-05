@@ -1,4 +1,5 @@
 <?php
+// this is only a test
 $curl = curl_init();
 // Creating a signature
 $reqBody = array('hello' => "world");
