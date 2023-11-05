@@ -14,6 +14,8 @@
     $fetch_id = $select_id->fetch(PDO::FETCH_ASSOC);
     $staff_brNum = $fetch_id['branch_num'];
 
+    $category_name = $_GET['category'];
+
     ?>
 
     <!DOCTYPE html>
@@ -35,14 +37,49 @@
                 <div class="col-2">
                     <ul class="list-unstyled p-3">
                         <li class="h4 text-center border-bottom border-dark mb-3">Menu</li>
-                        <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=1">Milktea Series</a></li>
-                        <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=2">Oreo Series</a></li>
-                        <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=3">Nutella Series</a></li>
-                        <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=4">Nutella Oreo Series</a></li>
-                        <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" class="text-decoration-none text-success fw-bold" href="staffPos.php?category=5">Fruit Tea / Yakult</a></li>
-                        <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=6">Refresher</a></li>
-                        <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=7">Mactea Special</a></li>
-                        <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=8">Mac Coffee</a></li>
+                        <?php
+
+                        if($category_name == 1) { ?>
+                            <li class="my-2"><a class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=1">Milktea Series</a></li>
+                        <?php } else { ?>
+                            <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=1">Milktea Series</a></li>
+                        <?php } ?>
+                        <?php if($category_name == 2) { ?>
+                            <li class="my-2"><a class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=2">Oreo Series</a></li>
+                        <?php } else { ?>
+                            <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=2">Oreo Series</a></li>
+                        <?php } ?>
+                        <?php if($category_name == 3) { ?>
+                            <li class="my-2"><a class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=3">Nutella Series</a></li>
+                        <?php } else { ?>
+                            <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=3">Nutella Series</a></li>
+                        <?php } ?>
+                        <?php if($category_name == 4) { ?>
+                            <li class="my-2"><a class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=4">Nutella Oreo Series</a></li>
+                        <?php } else { ?>
+                            <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=4">Nutella Oreo Series</a></li>
+                        <?php } ?>
+                        <?php if($category_name == 5) { ?>
+                            <li class="my-2"><a class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=5">Fruit Tea / Yakult<</a></li>
+                        <?php } else { ?>
+                            <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=5">Fruit Tea / Yakult<</a></li>
+                        <?php } ?>
+                        <?php if($category_name == 6) { ?>
+                            <li class="my-2"><a class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=6">Refresher</a></li>
+                        <?php } else { ?>
+                            <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=6">Refresher</a></li>
+                        <?php } ?>
+                        <?php if($category_name == 7) { ?>
+                            <li class="my-2"><a class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=7">Mactea Special</a></li>
+                        <?php } else { ?>
+                            <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=7">Mactea Special</a></li>
+                        <?php } ?>
+                        <?php if($category_name == 8) { ?>
+                            <li class="my-2"><a class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=8">Mac Coffee</a></li>
+                        <?php } else { ?>
+                            <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=8">Mac Coffee</a></li>
+                        <?php } ?>
+
                     </ul>
                 </div>
                 
