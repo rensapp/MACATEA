@@ -18,6 +18,24 @@ if (!isLoggedIn()) {
 		button[name=cancel] {
 			background: #B22222;
 		}
+    .con{
+      margin-top: 160px;
+      background-color: #92ca91;
+    }
+    .igroup{
+      margin-left: 0px;
+      justify-content: center;
+    }
+    @media (max-width: 1199px){
+      .igroup{
+        margin-left: 0px;
+      }
+    }
+    @media (max-width: 1199px){
+      .igroup{
+        margin-left: 0px;
+      }
+    }
 	</style>
 <html>
 	<head>
@@ -30,34 +48,34 @@ if (!isLoggedIn()) {
 		  <title> Change Password </title>
 	</head>
 <body>
-  <div class="container border border-dark rounded" style="margin-top: 180px; background-color: #92ca91;">
-    <div class="row text-center p-4">
-      <h2 class="border-bottom border-dark">Change Password</h2>
+  <div class="container border border-dark rounded con">
+    <div class="row text-center p-3">
+      <h2 class="border-bottom border-dark p-3 fw-bold">Change Password</h2>
     </div>
     
     <div class="row mb-3 p-3">
       <form method="post" action="">
-      <div class="input-group mb-2" style="margin-left: 160px;">
-        <label class="ms-5 me-5 mt-2">Old Password</label>
-        <input type="password" class="w-50" style="margin-left: 70px;" name="oldpw">
+      <div class="input-group mb-2 igroup">
+        <label class="ms-3 me-3 mt-2">Old Password</label>
+        <input type="password" class="w-50" style="margin-left: 25px;" name="oldpw">
       </div>
-      <div class="input-group mb-2" style="margin-left: 160px;">
-        <label class="ms-5 me-5 mt-2">New Password</label>
-        <input type="password" class="w-50" style="margin-left: 65px;" name="newpw">
+      <div class="input-group mb-2 igroup">
+        <label class="ms-3 me-3 mt-2">New Password</label>
+        <input type="password" class="w-50" style="margin-left: 22px;" name="newpw">
       </div>
-      <div class="input-group" style="margin-left: 160px;">
-        <label class="ms-5 me-5 mt-2">Confirm Password</label>
-        <input type="password" class="w-50" style="margin-left: 40px;" name="confirmpw">
+      <div class="input-group igroup">
+        <label class="ms-3 me-3 mt-2">Confirm Password</label>
+        <input type="password" class="w-50" name="confirmpw">
       </div>
     </div>
 
     <div class="row mb-3">
       <div class="col d-none d-lg-block d-md-block">
 		</div>
-      <div class="col-lg-3 col-md-5 col-sm-12">
+      <div class="col-lg-3 col-md-5 col-sm-12 ">
         <button type="submit" class="btn btn-success w-100" name="Confirm">Confirm</button>
       </div>
-      <div class="col-lg-3 col-md-5 col-sm-12">
+      <div class="col-lg-3 col-md-5 col-sm-12 mt-2 mt-lg-0 mt-md-0 mt-sm-2">
         <button type="submit" class="btn btn-danger btn-block w-100" name="cancel">Cancel</button>
       </div>
       <div class="col d-none d-lg-block d-md-block">
