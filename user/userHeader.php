@@ -43,7 +43,7 @@
     <div class="container-fluid px-5 blk">
     <nav class="navbar navbar-expand-sm navbar-dark py-3 px-4">
         <a
-            href="#" 
+            href="../user/userHomepage.php" 
             class="navbar-brand mb-0 fs-5 logo py-auto fw-bold mtcolor"
             style="display: flex; align-items: center; color: #60a333;"
             data-aos="fade-right" data-aos-delay="100">

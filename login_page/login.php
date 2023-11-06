@@ -39,7 +39,7 @@ body {
 
 <header class="opening-nav">
     <div class="flex">
-        <a href="home.php" class="logo" >
+        <a href="../homepage.php" class="logo" >
 		    <img src="../images/mactea-home.png" alt="..." height="70">
 		</a>
     </div>

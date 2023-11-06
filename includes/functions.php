@@ -232,7 +232,7 @@ if (isset($_GET['logout'])) {
 		if ($logged_in_user['status'] != '0') {
 		   $_SESSION['user'] = $logged_in_user;
      $_SESSION['success']  = "You are now logged in";
-     header('location:../user/MyAccount.php'); 
+     header('location:../user/userHomepage.php'); 
 	} else {
 		$errors['top1'] = "Please verify email, click to send verification code  <a href='EmailVerification.php'>Resend</a>";}
 	}

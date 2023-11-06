@@ -4,11 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link 
-		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
-		rel="stylesheet" 
-		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
-		crossorigin="anonymous">
     <title>User Homepage</title>
 </head>
 <style>
@@ -16,25 +11,46 @@
         background-color: black;
         color: white;
         border: 1px solid black;
-        position: absolute;
-        top: 268px;
-        right: 720px;
+        position: relative;
+        z-index: 10;
+        top: -60px;
     }
     .ordnow:hover{
         background-color: white;
         color: black;
+    }
 
+    @media (max-width: 1130px){
+        .ordnow{
+            top: -50px;
+        }
+    }
+    @media (max-width: 880px){
+        .ordnow{
+            top: -40px;
+        }
+    }
+    @media (max-width: 880px){
+        .ordnow{
+            top: -40px;
+            transform: scale(0.7);
+        }
+    }
+    @media (max-width: 501px){
+        .ordnow{
+            top: -55px;
+            transform: scale(0.5);
+        }
     }
 </style>
 <body class="d-flex flex-column min-vh-100 m-0">
     <div class="container-fluid" style="background-color: #7ED957;">
-        <div class="row text-center">
-            
-        
+        <div class="row text-center">     
+            <!-- <button type="button" class="btn w-25 ordnow fw-semibold">ORDER NOW</button> -->
+            <div>
+                <img src="../images/designHeader.png" width="100%" height="100%">
                 <button type="button" class="btn w-25 ordnow">ORDER NOW</button>
-                <div>
-                    <img src="../images/designHeader.png" width="100%" height="100%">
-                </div>
+            </div>
         </div>
         <div class="row bg-success">
             <div class="col-12 p-0">
@@ -43,10 +59,5 @@
             </div>            
         </div>
     </div>
-    <script 
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" 
-        crossorigin="anonymous">
-</script>  
 </body>
 </html>

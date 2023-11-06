@@ -33,7 +33,7 @@ body {
 <body>
 
 <header class="opening-nav">
-  <a href="home.php" class="logo" >
+  <a href="../homepage.php" class="logo" >
 	  <img src="../images/mactea-home.png" alt="..." height="70">
 	</a>
 </header>
