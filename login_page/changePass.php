@@ -1,10 +1,10 @@
 <?php include('../includes/functions.php');
  ?>
-  <head>
-<link rel="icon" href="../images/mactea.png">
-    <link rel="stylesheet" href="../css/logindesign1.css?v=<?php echo time();?>"/>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<head>
+  <link rel="icon" href="../images/mactea.png">
+  <link rel="stylesheet" href="../css/logindesign1.css?v=<?php echo time();?>"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <header class="opening-nav">

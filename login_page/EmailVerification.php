@@ -91,15 +91,15 @@
     <title>Account Verification</title>
 </head>
 
-<body>
-    <div class="container w-50 border border-dark rounded mt-5" style="background-color: #60a333;">
-        <div class="row p-3">
+<body style="background-color: #90ee90;">
+    <div class="container border border-dark rounded mt-5" style="background-color: white;">
+        <div class="row p-3 border-bottom border-dark" style="background-color: #008000">
             <h2 class="text-center text-light border-bottom pb-2">Account Verification</h2>
         </div>
         <div class="row p-4">
             <form action="#" method="POST" name="register">
             <div class="input-group mt-3" style="justify-content: center;">
-                <label class="me-3 fw-bold text-light">Email</label>
+                <label class="me-3 fw-bold">Email</label>
                 <input type="email" id="email_address" class="w-50" name="email" autocomplete="off">
                 <p class="error"> <?php if (isset($errors['email1'])) echo $errors ['email1'];?> </p>
                 <p class="error"> <?php if (isset($errors['email_login'])) echo $errors ['email_login'];?></p>
@@ -108,11 +108,11 @@
         <div class="row mt-3 p-3">
             <div class="col"></div>
             <div class="col-4">
-                <button type="submit" class="btn btn-light w-100 rounded" name="register">Submit</button>
+                <button type="submit" class="btn w-100 rounded text-light" style="background-color: #008000;" name="register">Submit</button>
             </div>
             <div class="col"></div>
         </div>
-            </form>
+        </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

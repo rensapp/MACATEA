@@ -110,7 +110,7 @@
                 
                 
 				<div class="card">
-					    <img class="card-img-top <?php if($cat8 == true){?> active_opacity <?php } ?>" onclick="window.location.href = '../user/MacCoffee_series.php'" src="../product/MacCoffee.jpg">
+					    <img class="card-img-top <?php if($cat8 == true){?> active_opacity <?php } ?>" onclick="window.location.href = '../user/MacCoffee_seriesE.php?category=8'" src="../product/MacCoffee.jpg">
                     <div class="card-body">
 						<h5 class="card-title <?php if($cat8 == true){?> active_border <?php } ?>">Mac Coffee</h5>
 					</div>
