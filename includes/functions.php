@@ -598,7 +598,7 @@ if (isset($_POST['update3'])) {
 function update3(){
 	
 	// call these variables with the global keyword to make them available in function
-	global $db, $errors, $name, $email, $mobilenumber,$username;
+	global $db, $errors, $name, $email, $mobilenumber,$username,$branch_num;
 
 $id=$_GET["id"];
 
@@ -607,7 +607,7 @@ $id=$_GET["id"];
 	$last_name="";
 	$email="";
 	$mobile_number="";
-	
+	$branch_num="";
 
 	$res=mysqli_query($db,"SELECT * FROM users where id=$id");
 	while ($row = mysqli_fetch_array($res))
@@ -616,7 +616,7 @@ $id=$_GET["id"];
 	$last_name=$row["last_name"];
 	$email=$row["email"];
 	$mobile_number=$row["mobile_number"];
-
+	$branch_num = $row["branch_num"];
 	}
 
 
@@ -626,6 +626,7 @@ $id=$_GET["id"];
 	$last_name      =  e($_POST['last_name']);
 	$email   =  e($_POST['email']);
 	$mobile_number    =  e($_POST['mobile_number']);
+	$branch_num = e($_POST['branch_num']);
 	
 
 	// form validation: ensure that the form is correctly filled
@@ -648,7 +649,7 @@ $id=$_GET["id"];
 		// register user if there are no errors in the form
 	if (count($errors) == 0) {
 		
-			$query = "Update users SET id='$id',first_name='$first_name',last_name='$last_name',mobile_number='$mobile_number' WHERE id='$id'";
+			$query = "Update users SET id='$id',first_name='$first_name',last_name='$last_name',mobile_number='$mobile_number',branch_num='$branch_num' WHERE id='$id'";
 			$result = mysqli_query($db, $query);
 echo '<script>alert("Update Successfully")</script>';
 	?>
