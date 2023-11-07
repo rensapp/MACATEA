@@ -1867,13 +1867,13 @@ function AddMacCoffeeSeries(){
 			$query = "INSERT INTO product (name, price, category,image_dir ) 
 					  VALUES('$name','$price','$category','$filename')";
 			mysqli_query($db, $query);
-echo '<script>alert("New Product added successfully")</script>';
+			echo '<script>alert("New Product added successfully")</script>';
 			// get id of the created user
 					?>
 <script type="text/javascript">
 window.location="AddMacCoffeeSeries.php";
-<updateMacColdBrew
-
+// <updateMacColdBrew
+<?php }
 if (isset($_POST['deliveryUpdate'])) {
 	deliveryUpdate();
 }
@@ -1899,7 +1899,7 @@ function deliveryUpdate(){
 	?>
 <script>
      window.history.go(-2);
-</script>";
+</script>
 <?php
 // header('Location: address.php');
 // exit();
