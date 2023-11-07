@@ -66,19 +66,19 @@ body {
             </div>
 
             <form method="post" action="login.php">
-                <p class="errortop"> <?php if (isset($errors['top'])) echo $errors ['top'];?></p>
-                <p class="errortop"> <?php if (isset($errors['top1'])) echo $errors ['top1'];?></p>
+                <p class="error text-danger"> <?php if (isset($errors['top'])) echo $errors ['top'];?></p>
+                <p class="error text-danger"> <?php if (isset($errors['top1'])) echo $errors ['top1'];?></p>
                 <div class="form-group">
                     <label class="h5 black">Email</label>
                     <input type="email" class="form-control" name="email" autocomplete="off">
-                    <p class="error"> <?php if (isset($errors['email_login'])) echo $errors ['email_login'];?></p>
+                    <p class="error text-danger"> <?php if (isset($errors['email_login'])) echo $errors ['email_login'];?></p>
                 </div>
 
                 <label class="h5 black">Password</label>
                 <div class="input-group">  
                     <input type="password" class="form-control" name="password" autocomplete="current-password" id="id_password">
                     <i class="far fa-eye" id="togglePassword" style="cursor: pointer; top:12px; right:46px; z-index:2; position:relative;"></i>    
-                    <p class="error"> <?php if (isset($errors['pass_login'])) echo $errors ['pass_login'];?></p>
+                    <p class="error text-danger"> <?php if (isset($errors['pass_login'])) echo $errors ['pass_login'];?></p>
                 </div>
 
                 <div class="mt-3">

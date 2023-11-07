@@ -66,40 +66,40 @@ body {
       <div class="form-group">
         <label>First Name</label>
         <input type="text" class="form-control" name="first_name" autocomplete="off" value="<?php echo $first_name; ?>">
-        <p class="error"> <?php if (isset($errors['firstname'])) echo $errors ['firstname'];?></p>
+        <p class="error text-danger"> <?php if (isset($errors['firstname'])) echo $errors ['firstname'];?></p>
       </div>
 
       <div class="form-group">
         <label>Last Name</label>
         <input type="text" class="form-control" name="last_name" autocomplete="off" value="<?php echo $last_name; ?> ">
-        <p class="error"> <?php if (isset($errors['lastname'])) echo $errors ['lastname'];?></p>
+        <p class="error text-danger"> <?php if (isset($errors['lastname'])) echo $errors ['lastname'];?></p>
       </div>
       <div class="form-group">
         <label>Contact number</label>
         <input type="text" class="form-control" name="mobile_number" autocomplete="off" value="<?php echo $mobile_number; ?>">
-        <p class="error"> <?php if (isset($errors['mobilenumber'])) echo $errors ['mobilenumber'];?></p>
-        <p class="error"> <?php if (isset($errors['mobilenumber1'])) echo $errors ['mobilenumber1'];?></p>
-        <p class="error"> <?php if (isset($errors['mobilenumber2'])) echo $errors ['mobilenumber2'];?></p>
+        <p class="error text-danger"> <?php if (isset($errors['mobilenumber'])) echo $errors ['mobilenumber'];?></p>
+        <p class="error text-danger"> <?php if (isset($errors['mobilenumber1'])) echo $errors ['mobilenumber1'];?></p>
+        <p class="error text-danger"> <?php if (isset($errors['mobilenumber2'])) echo $errors ['mobilenumber2'];?></p>
       </div>
       <div class="form-group">
         <label>Email</label>
         <input type="email" class="form-control" name="email" autocomplete="off" value="<?php echo $email; ?>">
-        <p class="error"> <?php if (isset($errors['email'])) echo $errors ['email'];?></p>
-        <p class="error"> <?php if (isset($errors['email1'])) echo $errors ['email1'];?></p>
+        <p class="error text-danger"> <?php if (isset($errors['email'])) echo $errors ['email'];?></p>
+        <p class="error text-danger"> <?php if (isset($errors['email1'])) echo $errors ['email1'];?></p>
       </div>
 
         <label>Password</label>
       <div class="input-group">  
         <input type="password" class="form-control" name="password_1" autocomplete="current-password" id="id_password">
         <i class="far fa-eye" id="togglePassword" style="cursor: pointer; top:12px; right:46px; z-index:2; position:relative;"></i>    
-        <p class="error"> <?php if (isset($errors['password'])) echo $errors ['password'];?></p>
-        <p class="error"> <?php if (isset($errors['password4'])) echo $errors ['password4'];?></p>
+        <p class="error text-danger"> <?php if (isset($errors['password'])) echo $errors ['password'];?></p>
+        <p class="error text-danger"> <?php if (isset($errors['password4'])) echo $errors ['password4'];?></p>
       </div>
       <div class="form-group">
         <label>Confirm password</label>
         <input type="password" class="form-control" name="password_2">
-        <p class="error"> <?php if (isset($errors['password2'])) echo $errors ['password2'];?></p>
-        <p class="error"> <?php if (isset($errors['password3'])) echo $errors ['password3'];?></p>
+        <p class="error text-danger"> <?php if (isset($errors['password2'])) echo $errors ['password2'];?></p>
+        <p class="error text-danger"> <?php if (isset($errors['password3'])) echo $errors ['password3'];?></p>
       </div>
       <div class="mt-3 w-100 text-center">
         <button type="submit" class="btn btn-dark w-100 green btn-lg" name="register_btn">Register</button>

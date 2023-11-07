@@ -1818,7 +1818,7 @@ function AddMacteaSpecial(){
 	
 	// register user if there are no errors in the form
 	if (count($errors) == 0) {
-			$query = "INSERT INTO product (name, price, category,image_dir ) 
+			$query = "INSERT INTO product (name, large, category,image_dir ) 
 					  VALUES('$name','$price','7','$filename')";
 			mysqli_query($db, $query);
 echo '<script>alert("New Product added successfully")</script>';
