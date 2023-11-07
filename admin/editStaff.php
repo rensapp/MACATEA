@@ -99,9 +99,9 @@ button[name=cancel] {
 		<div class="input-group">
 			<label>Contact Number</label>
 			<input type="text" name="mobile_number" autocomplete="off"  value="<?php echo $mobile_number; ?>">
-				<p class="error"> <?php if (isset($errors['mobile_number'])) echo $errors ['mobile_number'];?></p>
-				<p class="error"> <?php if (isset($errors['mobilenumber1'])) echo $errors ['mobilenumber1'];?></p>
-				<p class="error"> <?php if (isset($errors['mobilenumber2'])) echo $errors ['mobilenumber2'];?></p>
+						<p class="error"> <?php if (isset($errors['mobile_number'])) echo $errors ['mobile_number'];?></p>
+									<p class="error"> <?php if (isset($errors['mobilenumber1'])) echo $errors ['mobilenumber1'];?></p>
+												<p class="error"> <?php if (isset($errors['mobilenumber2'])) echo $errors ['mobilenumber2'];?></p>
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="update3"> Update </button>

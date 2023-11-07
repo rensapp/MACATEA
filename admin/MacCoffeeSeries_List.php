@@ -38,65 +38,13 @@ if (!isLoggedIn()) {
 
 <div class="main-container">
 
- <form action="SearchMacCoffeeSeries.php" name="form1" method="post" style=" background-color: #4CAF50; position:absolute; top:  -20px; left :220px;" >
-	<div  class="container" style="padding:30px 10px 50px 210px;  position:absolute; top:  210px; left :-45%;"> 
-    <input type="text" class="form-control" id="submit" placeholder="Search name" name="submit" style="align: center;  border-radius: 8px; width:400px;height: 40px;" autocomplete="off" > </div>
-	
-    <div class="main-button" style="padding:30px 50px 90px 46px;  position:absolute; top:  210px; left :43%;"> 
-	<div class="container" style="position:relative;">
-		<button type="submit" name="search" class="btn btn-success"  style=" font-family: 'Copperplate'; font-size: 20px;color: #E0D9E4; border: 1px solid;border-radius: 8px; background-color: #008000; position: left: 50px;  width:150px;height: 40px;" >
-				Search</button> </div>
-			</div>
-	</form>
-		<?php
- include "PaginationMacCoffeeSeries.php";
- ?>
 		<link rel="stylesheet"  href="desi.css?v=<?php echo time();?>"/>
  <span class="title"> MAC COFFEE SERIES</span> 
 	<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-	<table class="table4">
-		<tr>
-		<th>Name</th>
-		<th>Price</th>
-		<th>Image</th>
-		<th>Action</th>
-		</tr>
-
-<?php
-	$res=mysqli_query($db,"SELECT * FROM product WHERE category = '8'");
-	if(mysqli_num_rows($res) > 0){
-	while($crow=mysqli_fetch_array($nquery))
-	{
-	?>
-		
-	<tr>
-					<td><?php echo $crow["name"]; ?></td>
-                    <td><?php echo $crow["price"]; ?></td>
-                    <td><img src="../product/<?php echo $crow["image_dir"]; ?>" width="50px" height="50px"></td>
-					<td> <a href="editMacCoffeeSeries.php?id=<?php echo $crow["id"]; ?>"><button  class="delete" style="background-color: #4682B4;">Edit</button></a>
-					<a href="DeleteMacCoffeeSeries.php?id=<?php echo $crow["id"]; ?>"><button  class="delete" style="background-color: #B22222;">Delete</button></a> </td>
-                </tr>
 	
-	 <?php
-	}  }   else {
-	
-			echo "<p style='text-shadow: 2px 2px #008000;'> <font color=black font size='50' font face='courier' size='6pt'><b>EMPTY</b></font> </p>";
-	  }   
-        ?>
-	</table>
- 
-<style>
-
-
-</style>  
-  <div  style="padding:10px 10px 10px 10px;  position:absolute; top:  540px; left :260px;"> 
-     <div class="pagination" style= "color: #7CFC00; background-color: #000000; border-radius: 25px;padding: 8px 16px; text-decoration: none;"  
-	 
-	 id="pagination_controls"><?php echo $paginationCtrls; ?> </div>
-    </div> 
-	</div>
-   </div> 
-
+	<a href="MacColdBrewList.php"> <button class="button" style="margin-top:170px; margin-left: 60px;"> Mac Cold Brew </button> </a>
+	<a href="MacLatteList.php"> <button class="button" style="margin-top:170px; margin-left: 360px;"> Mac Latte </button> </a>
+	<a href="MacSignatureList.php"> <button class="button" style="margin-top:170px; margin-left: 660px;"> Mac Signature </button> </a>
 </body>
 </html>
 <script type="text/javascript">

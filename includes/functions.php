@@ -232,7 +232,7 @@ if (isset($_GET['logout'])) {
 		if ($logged_in_user['status'] != '0') {
 		   $_SESSION['user'] = $logged_in_user;
      $_SESSION['success']  = "You are now logged in";
-     header('location:../user/userHomepage.php'); 
+     header('location:../user/userHomePage.php'); 
 	} else {
 		$errors['top1'] = "Please verify email, click to send verification code  <a href='EmailVerification.php'>Resend</a>";}
 	}
@@ -326,7 +326,7 @@ echo '<script>alert("New Product added successfully")</script>';
 			// get id of the created user
 					?>
 <script type="text/javascript">
-window.location="AddProduct.php";
+window.location="AddMilkteaSeries.php";
 </script>
 <?php
 	}
@@ -598,7 +598,7 @@ if (isset($_POST['update3'])) {
 function update3(){
 	
 	// call these variables with the global keyword to make them available in function
-	global $db, $errors, $name, $email, $mobilenumber,$username,$branch_num;
+	global $db, $errors, $name, $email, $mobilenumber,$username, $branch_num;
 
 $id=$_GET["id"];
 
@@ -608,6 +608,7 @@ $id=$_GET["id"];
 	$email="";
 	$mobile_number="";
 	$branch_num="";
+	
 
 	$res=mysqli_query($db,"SELECT * FROM users where id=$id");
 	while ($row = mysqli_fetch_array($res))
@@ -616,7 +617,7 @@ $id=$_GET["id"];
 	$last_name=$row["last_name"];
 	$email=$row["email"];
 	$mobile_number=$row["mobile_number"];
-	$branch_num = $row["branch_num"];
+	$branch_num = $row["branch_num"];		
 	}
 
 
@@ -627,7 +628,7 @@ $id=$_GET["id"];
 	$email   =  e($_POST['email']);
 	$mobile_number    =  e($_POST['mobile_number']);
 	$branch_num = e($_POST['branch_num']);
-	
+
 
 	// form validation: ensure that the form is correctly filled
 	
@@ -1308,21 +1309,23 @@ window.location="MacteaSpecial_List.php";
 }
 
 
-if (isset($_POST['updateMacCoffeeSeries'])) {
-	updateMacCoffeeSeries();
+if (isset($_POST['updateMacColdBrew'])) {
+	updateMacColdBrew();
 }
 
 
-function updateMacCoffeeSeries(){
+function updateMacColdBrew(){
 	
 	// call these variables with the global keyword to make them available in function
-	global $db, $errors, $name, $price,$image_dir;
+	global $db, $errors, $name, $price, $category,$image_dir;
 
 $id=$_GET["id"];
 
 	$name="";
 	$price="";
 	$image_dir="";
+	$category="";
+
 
 	$res=mysqli_query($db,"SELECT * FROM product where id=$id");
 	while ($row = mysqli_fetch_array($res))
@@ -1330,6 +1333,7 @@ $id=$_GET["id"];
 	$name=$row["name"];
 	$price=$row["price"];
 	$image_dir=$row["image_dir"];
+	$category=$row["category"];
 
 	}
 
@@ -1338,6 +1342,7 @@ $id=$_GET["id"];
     // defined below to escape form values
 	$name       =  e($_POST['name']);
 	$price   =  e($_POST['price']);
+	$category   =  e($_POST['category']);
 
 	
 	if($_FILES ["new_image"]["name"] !=""){
@@ -1358,15 +1363,157 @@ $id=$_GET["id"];
    if (empty($price)) { 
    $errors['price'] = "Field cannot be blank.";
   }	
+  if (empty($category)) { 
+   $errors['category'] = "Select a Category.";
+  }	
 		// register user if there are no errors in the form
 	if (count($errors) == 0) {
 		
-			$query = "Update product SET id='$id',name='$name',price='$price',image_dir='$filename' WHERE id='$id'";
+			$query = "Update product SET id='$id',name='$name',price='$price',category='$category',image_dir='$filename' WHERE id='$id'";
 			$result = mysqli_query($db, $query);
 echo '<script>alert("Update Successfully")</script>';
 	?>
 <script type="text/javascript">
-window.location="MacCoffeeSeries_List.php";
+window.location="MacColdBrewList.php";
+</script>
+<?php
+}
+}
+
+if (isset($_POST['updateMacLatte'])) {
+	updateMacLatte();
+}
+
+
+function updateMacLatte(){
+	
+	// call these variables with the global keyword to make them available in function
+	global $db, $errors, $name, $price,$category,$image_dir;
+
+$id=$_GET["id"];
+
+	$name="";
+	$price="";
+	$image_dir="";
+	$category="";
+
+	$res=mysqli_query($db,"SELECT * FROM product where id=$id");
+	while ($row = mysqli_fetch_array($res))
+	{
+	$name=$row["name"];
+	$price=$row["price"];
+	$image_dir=$row["image_dir"];
+	$category=$row["category"];
+
+	}
+
+
+	// receive all input values from the form. Call the e() function
+    // defined below to escape form values
+	$name       =  e($_POST['name']);
+	$price   =  e($_POST['price']);
+	$category   =  e($_POST['category']);
+
+	
+	if($_FILES ["new_image"]["name"] !=""){
+	$filename = $_FILES ["new_image"]["name"];
+	$tempname = $_FILES ["new_image"]["tmp_name"];
+	$path="../product/".$filename;
+	move_uploaded_file($tempname, $path);
+	}
+	
+	else {
+		$filename = $_POST ['old_image'];
+	}
+	// form validation: ensure that the form is correctly filled
+	
+	 if (empty($name)) { 
+   $errors['name'] = "Field cannot be blank.";
+  }	
+   if (empty($price)) { 
+   $errors['price'] = "Field cannot be blank.";
+  }	
+  if (empty($category)) { 
+   $errors['category'] = "FSelect a Category.";
+  }	
+		// register user if there are no errors in the form
+	if (count($errors) == 0) {
+		
+			$query = "Update product SET id='$id',name='$name',price='$price',category='$category',image_dir='$filename' WHERE id='$id'";
+			$result = mysqli_query($db, $query);
+echo '<script>alert("Update Successfully")</script>';
+	?>
+<script type="text/javascript">
+window.location="MacLatteList.php";
+</script>
+<?php
+}
+}
+
+if (isset($_POST['updateMacSignature'])) {
+	updateMacSignature();
+}
+
+function updateMacSignature(){
+	
+	// call these variables with the global keyword to make them available in function
+	global $db, $errors, $name, $price, $category, $image_dir;
+
+$id=$_GET["id"];
+
+	$name="";
+	$price="";
+	$image_dir="";
+	$category="";
+
+	$res=mysqli_query($db,"SELECT * FROM product where id=$id");
+	while ($row = mysqli_fetch_array($res))
+	{
+	$name=$row["name"];
+	$price=$row["price"];
+	$image_dir=$row["image_dir"];
+	$category=$row["category"];
+
+	}
+
+
+	// receive all input values from the form. Call the e() function
+    // defined below to escape form values
+	$name       =  e($_POST['name']);
+	$price   =  e($_POST['price']);
+	$category   =  e($_POST['category']);
+
+	
+	if($_FILES ["new_image"]["name"] !=""){
+	$filename = $_FILES ["new_image"]["name"];
+	$tempname = $_FILES ["new_image"]["tmp_name"];
+	$path="../product/".$filename;
+	move_uploaded_file($tempname, $path);
+	}
+	
+	else {
+		$filename = $_POST ['old_image'];
+	}
+	// form validation: ensure that the form is correctly filled
+	
+	 if (empty($name)) { 
+   $errors['name'] = "Field cannot be blank.";
+  }	
+   if (empty($price)) { 
+   $errors['price'] = "Field cannot be blank.";
+  }	
+  if (empty($category)) { 
+   $errors['category'] = "Select a Category.";
+  }	
+		// register user if there are no errors in the form
+	if (count($errors) == 0) {
+		
+			$query = "Update product SET id='$id',name='$name',price='$price',category='$category',image_dir='$filename' WHERE id='$id'";
+			$result = mysqli_query($db, $query);
+echo '<script>alert("Update Successfully")</script>';
+	?>
+<script type="text/javascript">
+window.location="MacSignatureList.php";
 </script>
 <?php
 }
@@ -1420,7 +1567,7 @@ echo '<script>alert("New Product added successfully")</script>';
 			// get id of the created user
 					?>
 <script type="text/javascript">
-window.location="AddProduct.php";
+window.location="AddOreoSeries.php";
 </script>
 <?php
 	}
@@ -1470,7 +1617,7 @@ echo '<script>alert("New Product added successfully")</script>';
 			// get id of the created user
 					?>
 <script type="text/javascript">
-window.location="AddProduct.php";
+window.location="AddNutellaSeries.php";
 </script>
 <?php
 	}
@@ -1520,7 +1667,7 @@ echo '<script>alert("New Product added successfully")</script>';
 			// get id of the created user
 					?>
 <script type="text/javascript">
-window.location="AddProduct.php";
+window.location="AddNutellaOreoSeries.php";
 </script>
 <?php
 	}
@@ -1574,7 +1721,7 @@ echo '<script>alert("New Product added successfully")</script>';
 			// get id of the created user
 					?>
 <script type="text/javascript">
-window.location="AddProduct.php";
+window.location="AddFruitTeaSeries.php";
 </script>
 <?php
 	}
@@ -1628,7 +1775,7 @@ echo '<script>alert("New Product added successfully")</script>';
 			// get id of the created user
 					?>
 <script type="text/javascript">
-window.location="AddProduct.php";
+window.location="AddRefresherSeries.php";
 </script>
 <?php
 	}
@@ -1674,7 +1821,7 @@ echo '<script>alert("New Product added successfully")</script>';
 			// get id of the created user
 					?>
 <script type="text/javascript">
-window.location="AddProduct.php";
+window.location="AddMacteaSpecial.php";
 </script>
 <?php
 	}
@@ -1687,12 +1834,13 @@ if (isset($_POST['AddMacCoffeeSeries'])) {
 // REGISTER USER
 function AddMacCoffeeSeries(){
 	// call these variables with the global keyword to make them available in function
-	global $db, $errors, $name, $price, $image;
+	global $db, $errors, $name, $price, $image, $category;
 
 	// receive all input values from the form. Call the e() function
     // defined below to escape form values
 	$name       =  e($_POST['name']);
 	$price   =  e($_POST['price']);
+	$category   =  e($_POST['category']);
 	
 	$filename = $_FILES ["uploadfile"]["name"];
 	$tempname = $_FILES ["uploadfile"]["tmp_name"];
@@ -1706,6 +1854,9 @@ function AddMacCoffeeSeries(){
   if (empty($price)) { 
    $errors['price'] = "Field cannot be blank.";
   }
+  if (empty($category)) { 
+	$errors['category'] = "Select a category.";
+   }
   if (empty($filename)) { 
    $errors['filename'] = "Please attach a image.";
   }
@@ -1714,17 +1865,14 @@ function AddMacCoffeeSeries(){
 	// register user if there are no errors in the form
 	if (count($errors) == 0) {
 			$query = "INSERT INTO product (name, price, category,image_dir ) 
-					  VALUES('$name','$price','8','$filename')";
+					  VALUES('$name','$price','$category','$filename')";
 			mysqli_query($db, $query);
 echo '<script>alert("New Product added successfully")</script>';
 			// get id of the created user
 					?>
 <script type="text/javascript">
-window.location="AddProduct.php";
-</script>
-<?php
-	}
-}
+window.location="AddMacCoffeeSeries.php";
+<updateMacColdBrew
 
 if (isset($_POST['deliveryUpdate'])) {
 	deliveryUpdate();

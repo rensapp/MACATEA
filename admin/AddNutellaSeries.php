@@ -52,12 +52,12 @@ if (!isLoggedIn()) {
 	</div>
 	<div class="input-groupA">
 		<label>Price 16oz</label>
-		<input type="number" name="price_16oz" autocomplete="off">
+		<input type="number" name="price_16oz" autocomplete="off" value="115" readonly>
 		<p class="error"> <?php if (isset($errors['price_16oz'])) echo $errors ['price_16oz'];?></p>
 	</div>
 	<div class="input-groupA">
 		<label>Price 22oz</label>
-		<input type="number" name="price_22oz" autocomplete="off">
+		<input type="number" name="price_22oz" autocomplete="off" value="120" readonly>
 		<p class="error"> <?php if (isset($errors['price_22oz'])) echo $errors ['price_22oz'];?></p>
 	</div>
 	<div class="input-groupA">

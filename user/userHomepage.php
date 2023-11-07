@@ -49,7 +49,7 @@
             <!-- <button type="button" class="btn w-25 ordnow fw-semibold">ORDER NOW</button> -->
             <div>
                 <img src="../images/designHeader.png" width="100%" height="100%">
-                <button type="button" class="btn w-25 ordnow">ORDER NOW</button>
+                <button type="button" onclick="location.href='../user/MilkteaSeries.php'" class="btn w-25 ordnow">ORDER NOW</button>
             </div>
         </div>
         <div class="row bg-success">

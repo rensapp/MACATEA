@@ -52,17 +52,17 @@ if (!isLoggedIn()) {
 	</div>
 	<div class="input-groupA">
 		<label>Price Medium</label>
-		<input type="number" name="medium" autocomplete="off">
+		<input type="number" name="medium" autocomplete="off" value="88" readonly>
 		<p class="error"> <?php if (isset($errors['medium'])) echo $errors ['medium'];?></p>
 	</div>
 	<div class="input-groupA">
 		<label>Price Large</label>
-		<input type="number" name="large" autocomplete="off">
+		<input type="number" name="large" autocomplete="off" value="98" readonly>
 		<p class="error"> <?php if (isset($errors['large'])) echo $errors ['large'];?></p>
 	</div>
 	<div class="input-groupA">
 		<label>Price 1 Liter</label>
-		<input type="number" name="oneliter" autocomplete="off">
+		<input type="number" name="oneliter" autocomplete="off" value="150" readonly>
 		<p class="error"> <?php if (isset($errors['oneliter'])) echo $errors ['oneliter'];?></p>
 	</div>
 	<div class="input-groupA">

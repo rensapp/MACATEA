@@ -41,11 +41,11 @@ if (!isLoggedIn()) {
 
  <form action="SearchStaff.php" name="form1" method="post" style=" background-color: #4CAF50; position:absolute; top:  -20px; left :220px;" >
 	<div  class="container" style="padding:30px 10px 50px 210px;  position:absolute; top:  210px; left :-45%;"> 
-    <input type="text" class="form-control" id="submit" placeholder="Search first name" name="submit" style="text-align: center;  border-radius: 8px; width:400px;height: 40px;" autocomplete="off" > </div>
+    <input type="text" class="form-control" id="submit" placeholder="Search first name" name="submit" style="align: center;  border-radius: 8px; width:400px;height: 40px;" autocomplete="off" > </div>
 	
     <div class="main-button" style="padding:30px 50px 90px 46px;  position:absolute; top:  210px; left :43%;"> 
 	<div class="container" style="position:relative;">
-		<button type="submit" name="search" class="btn btn-success"  style=" font-family: 'Copperplate'; font-size: 20px; color: #E0D9E4; border: 1px solid; border-radius: 8px; background-color: #008000; position: left:50px; width:150px; height:40px;" >
+		<button type="submit" name="search" class="btn btn-success"  style=" font-family: 'Copperplate'; font-size: 20px;color: #E0D9E4; border: 1px solid;border-radius: 8px; background-color: #008000; position: left: 50px;  width:150px;height: 40px;" >
 				Search</button> </div>
 			</div>
 	</form>
@@ -61,8 +61,8 @@ if (!isLoggedIn()) {
 		<th>First name</th>
 		<th>Last name</th>
 		<th>Email</th>
+		<th> Branch </th>
 		<th>Contact Number</th>
-		<th>Branch</th>
 		<th>Action</th>
 		</tr>
 

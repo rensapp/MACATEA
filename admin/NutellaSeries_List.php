@@ -92,7 +92,7 @@ if (!isLoggedIn()) {
 
 
 </style>  
-  <div  style="padding:10px 10px 10px 10px;  position:absolute; top:  540px; left :260px;"> 
+  <div  style="padding:10px 10px 10px 10px;  position:absolute; top:  560px; left :260px;"> 
      <div class="pagination" style= "color: #7CFC00; background-color: #000000; border-radius: 25px;padding: 8px 16px; text-decoration: none;"  
 	 
 	 id="pagination_controls"><?php echo $paginationCtrls; ?> </div>

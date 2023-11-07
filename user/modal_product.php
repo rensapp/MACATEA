@@ -48,6 +48,11 @@
 		mysqli_stmt_execute($stmt);
 		}
 		header("location: NutellaOreo_series.php");
+		?>
+		<!-- <script>
+			 window.history.go(-1);
+		</script> -->
+		<?php
 	}
 	
 	if(isset($_POST["Cancel"]))

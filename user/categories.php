@@ -46,7 +46,7 @@
 
 				<div class="card">
                     <!-- <a href="#" class="text-center"> -->
-					    <img class="card-img-top <?php if($cat1 == true){?> active_opacity <?php } ?>" src="../product/Milktea_Series.jpg">
+					    <img class="card-img-top <?php if($cat1 == true){?> active_opacity <?php } ?>" onclick="window.location.href = '../user/MilkteaSeries.php'" src="../product/Milktea_Series.jpg">
 					<div class="card-body">
 						<h5 class="card-title <?php if($cat1 == true){?> active_border <?php } ?>">Milktea Series</h5>
 					</div>
@@ -56,7 +56,7 @@
 			
 				<div class="card">
                     <!-- <a href="#" class="text-center"> -->
-					    <img class="card-img-top <?php if($cat2 == true){?> active_opacity <?php } ?>" src="../product/Oreo_Series.jpg">
+					    <img class="card-img-top <?php if($cat2 == true){?> active_opacity <?php } ?>"onclick="window.location.href = '../user/OreoSeries.php'" src="../product/Oreo_Series.jpg">
 					<div class="card-body">
 						<h5 class="card-title <?php if($cat2 == true){?> active_border <?php } ?>">Oreo Series</h5>
 					</div>
@@ -66,7 +66,7 @@
 			
 				<div class="card">
                     <!-- <a href="#" class="text-center"> -->
-					    <img class="card-img-top <?php if($cat3 == true){?> active_opacity <?php } ?>" src="../product/Nutella_Series.jpg">
+					    <img class="card-img-top <?php if($cat3 == true){?> active_opacity <?php } ?>" onclick="window.location.href = '../user/NutellaSeries.php'" src="../product/Nutella_Series.jpg">
 					<div class="card-body">
 						<h5 class="card-title <?php if($cat3 == true){?> active_border <?php } ?>">Nutella Series</h5>
 					</div>
@@ -92,7 +92,7 @@
 			
 				<div class="card">
                     <!-- <a href="#" class="text-center"> -->
-					    <img class="card-img-top <?php if($cat6 == true){?> active_opacity <?php } ?>" src="../product/Refresher_series.jpg">
+					    <img class="card-img-top <?php if($cat6 == true){?> active_opacity <?php } ?>" onclick="window.location.href = '../user/Refresher.php'" src="../product/Refresher_series.jpg">
 					<div class="card-body">
 						<h5 class="card-title <?php if($cat6 == true){?> active_border <?php } ?>">Refresher</h5>
 					</div>
@@ -101,7 +101,7 @@
 			
 				<div class="card">
                     <!-- <a href="#" class="text-center"> -->
-					    <img class="card-img-top <?php if($cat7 == true){?> active_opacity <?php } ?>" src="../product/Mactea_Special.jpg">
+					    <img class="card-img-top <?php if($cat7 == true){?> active_opacity <?php } ?>" onclick="window.location.href = '../user/MacteaSpecial.php'" src="../product/Mactea_Special.jpg">
                     <div class="card-body">
 						<h5 class="card-title <?php if($cat7 == true){?> active_border <?php } ?>">Mactea Special</h5>
 					</div>

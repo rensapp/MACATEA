@@ -56,6 +56,14 @@ if (!isLoggedIn()) {
 		<p class="error"> <?php if (isset($errors['price'])) echo $errors ['price'];?></p>
 	</div>
 	<div class="input-groupA">
+		<label>Category</label>
+		<select name="category" id="">
+			<option value="9">Mac Cold Brew</option>
+			<option value="10">Mac Latte</option>
+			<option value="11">Mac Signature</option>
+		</select>
+	</div>
+	<div class="input-groupA">
 		<label>Image</label>
 		<input style="height:40px;" type="file" name="uploadfile"  autocomplete="off">
 		<p class="error"> <?php if (isset($errors['filename'])) echo $errors ['filename'];?></p>

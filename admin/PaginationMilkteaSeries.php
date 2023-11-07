@@ -30,7 +30,7 @@
  
     $limit = 'LIMIT ' .($pagenum - 1) * $page_rows .',' .$page_rows;
  
-    $nquery=mysqli_query($conn,"select * from `product` WHERE category = '1'");
+    $nquery=mysqli_query($conn,"select * from `product` WHERE category = '1' $limit");
  
     $paginationCtrls = '';
  

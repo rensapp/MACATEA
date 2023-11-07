@@ -108,10 +108,10 @@
 		</div>
 
       		<?php
-        		include '../user/modal_product.php'; }
+        		include '../user/modal_product_macCoffee.php'; }
 				} else {
 			
-					echo "<p align='center' class='mt-4'> <font color=black font size='40' font face='courier' size='6pt'><b>NO PRODUCT AVAILABLE</b></font> </p>";
+					echo "<p align='center' class='mt-4'> <font color=black font size='40' font face='courier' size='6pt'><b>Select Category</b></font> </p>";
 				}
 			?>
 	</div>
