@@ -18,7 +18,7 @@ if (!isLoggedIn()) {
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" name="viewport" content="width-device-width, initial-scale=1"/>
-		<link rel="icon" href="../images/mactea.png">	
+		<link rel="icon" href="../images/mactea.png">
 		<title>My Account</title>
 		<link 
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 

@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="./images/mactea.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MACTEA</title>
+    <title>MACTEA Homepage</title>
     <link 
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
         rel="stylesheet" 
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
         crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<link rel="icon" href="./images/mactea.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="d-flex flex-column min-vh-100 m-0">
 
 <!-- navbar start -->
-<div class="container-fluid px-5" style="background-color: black;">
+<div class="container-fluid px-5">
     <nav class="navbar navbar-expand-sm navbar-light bg-transparent py-4 px-4">
         <a
             href="#" 
@@ -65,23 +65,22 @@
         <div 
             class="bg-image ms-lg-5 me-lg-2 border-end border-dark" 
             data-aos="zoom-in" data-aos-delay="50"
-            style="background-image: url('./images/MacteaHomepage.jpg');
+            style="background-image: url('./images/splash.png');
             height: 90vh; width: 95vh; background-size: contain;">
         </div>
-        <div class="title-con p-lg-3 p-md-0 p-sm-0 ms-lg-2 ms-md-1 center"><br><br>
-            <p class="title-enjoy display-2 display-md-3 display-sm-4 text-center m-0 mt-lg-5 mt-md-5 mt-sm-5 " data-aos="fade-left" data-aos-delay="50">Enjoy</p>
+        <div class="title-con p-lg-3 p-md-0 p-sm-0 ms-lg-2 ms-md-1 center">
+            <p class="title-enjoy display-2 display-md-3 display-sm-4 text-center m-0 mt-lg-5 " data-aos="fade-left" data-aos-delay="50">Enjoy</p>
             <p class="title display-3 display-md-4 display-sm-5 text-center my-1 "data-aos="fade-left" data-aos-delay="100">your day with a cup of</p>
             <p class="series display-2 display-md-3 display-sm-4 text-center mt-0 my-0 "data-aos="fade-left" data-aos-delay="150">Milk Tea</p>
-            <br><br><br>
+            <p class="details text-center my-4"data-aos="fade-up" data-aos-delay="50">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Illo laborum molestiae voluptatum vitae consequuntur inventore
+            nesciunt praesentium impedit, unde cum consequatur laudantium
+            iusto dignissimos quo animi.
+            </p>
             <div class="text-center mt-2">
-                <div class="row" style="justify-content: center">
-                    <div class="col-4">
-                        <button type="button" onclick="signIn()" class="btn btn-outline-success p-lg-5 fw-bold  p-sm-1 mx-1 mx-sm-1 font-weight-bold w-100" data-aos="fade-up" data-aos-delay="100"><span class="h3">Sign In</span></button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" onclick="signUp()" class="btn btn-outline-success p-lg-5 fw-bold p-sm-1 mx-1 mx-sm-0 font-weight-bold w-100" data-aos="fade-up" data-aos-delay="100"><span class="h3">Sign Up</span></button>
-                    </div>
-                </div>
+                <button type="button" onclick="signIn()" class="btn btn-outline-success px-lg-4 px-sm-1 mx-1 mx-sm-1 font-weight-bold" data-aos="fade-up" data-aos-delay="100">Sign In</button>
+                <button type="button" onclick="signUp()" class="btn btn-outline-success px-lg-4 px-sm-1 mx-1 mx-sm-0 font-weight-bold" data-aos="fade-up" data-aos-delay="100">Sign Up</button>
             </div>  
         </div>
     <!-- </div> -->
@@ -94,10 +93,11 @@
 
     <div class="row about p-4 " id="about">
         <div class="col-12 p-lg-4 p-md-2 p-sm-0">
-            <h1 data-aos="fade-down" data-aos-delay="50">About us</h1><br>
-            <p data-aos="fade-down" data-aos-delay="100">WELCOME TO MACTEA! Your ultimate milk tea destination.</p>
+            <h1 data-aos="fade-down" data-aos-delay="50">About us</h1>
+            <p data-aos="fade-down" data-aos-delay="100">Welcome to MACTEA: Your Ultimate Milk Tea Destination</p>
             <p data-aos="fade-down" data-aos-delay="150">At MACTEA, we're dedicated to crafting the perfect blend of flavors to bring you an
-                unparalleled milk tea experience. Our cozy shop is a haven for milk tea enthusiasts, where every sip takes you on a journey of rich aromas and delightful tastes. With
+                unparalleled milk tea experience. Our cozy shop is a haven for milk tea enthusiasts
+                , where every sip takes you on a journey of rich aromas and delightful tastes. With
                 a wide variety of flavors and customization options, you're sure to find your new favorite here.
             </p>
         </div>
@@ -105,9 +105,8 @@
     
     <div class="row highlights-con d-flex bg-dark ">
         <div class="col-lg-6 col-md-12 p-4 text-white">
-            <br> <br>
-            <h1 data-aos="fade-right" data-aos-delay="50">Our menu highlights</h1>
-            <ul> <br><br>
+            <h1 data-aos="fade-right" data-aos-delay="50">Our Menu Highlights</h1>
+            <ul>
                 <li data-aos="fade-right" data-aos-delay="100">Classic Milk Teas: Indulge in the nostalgia of our classic milk tea varieties, prepared with precision and care. From Traditional Black Milk Tea to Creamy Thai Tea, our classics are designed to satisfy your cravings.
                 </li>
                 <li data-aos="fade-right" data-aos-delay="120">Fruit-infused Delights: Experience the refreshing fusion of fruit and tea in our Fruit Tea collection. Try our zesty Mango Green Tea or the exotic Passionfruit Oolong.                
@@ -122,7 +121,7 @@
             <div 
                 class="bg-image"
                 data-aos="zoom-in" data-aos-delay="180"
-                style="background-image: url('./images/mactea.jpg') ;  
+                style="background-image: url('./images/ingredients.jpg');
                 height: 66vh;">
             </div>
         </div>
@@ -134,14 +133,13 @@
             <div 
                 class="bg-image"
                 data-aos="zoom-in" data-aos-delay="180"
-                style="background-image: url('./images/MacteaLogo.jpg');
-                width: 100vh; height: 66vh; margin-left:200px;">
+                style="background-image: url('./images/ingredients.jpg');
+                width: 100vh; height: 66vh;">
             </div>
         </div>
         <div class="col-lg-6 col-md-12 p-4 text-white">
-            <br><br><br>
-            <h1 data-aos="fade-left" data-aos-delay="50">WHY CHOOSE MACTEA?</h1>
-            <ul><br><br>
+            <h1 data-aos="fade-left" data-aos-delay="50">Why Choose MACTEA?</h1>
+            <ul>
                 <li data-aos="fade-left" data-aos-delay="70">Quality Ingredients: We source only the finest tea leaves, fresh fruits, and premium
                     toppings to ensure that every cup is a masterpiece of taste and quality.
                 </li>
@@ -193,8 +191,8 @@
         <div class="contact text-dark p-4 mb-3">
             <h1 class="pb-4 text-center" data-aos="fade-up" data-aos-delay="50">Contact Us</h1>
             <div class="d-sm-flex justify-content-between" data-aos="fade-up" data-aos-delay="100">
-                <p><i class="fa-solid fa-mobile-screen-button" style="color: #181818;"></i></i></i><span> Mobile Number:</span> 0946-837-2846</p>
-                <p><i class="fa-solid fa-tty" style="color: #181818;"></i><span> Telephone Number:</span> 7720-689</p>
+                <p><i class="fa-solid fa-mobile-screen-button" style="color: #181818;"></i></i></i><span> Mobile Number:</span> 094 837 2846</p>
+                <p><i class="fa-solid fa-tty" style="color: #181818;"></i><span> Telephone Number:</span> 7720 689</p>
                 <p><i class="fa-solid fa-envelope" style="color: #181818;"></i><span> Email:</span> Macteamilkteashop@gmail.com</p>
             </div>
         </div>
@@ -241,6 +239,9 @@
         --font: Arial, Helvetica, sans-serif;
         --green: #008000;
     }
+    *{
+        /* border: 1px solid black; */
+    } 
      body, html {
          overflow-x: hidden;
     }

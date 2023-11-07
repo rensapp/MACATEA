@@ -69,16 +69,14 @@ if (!isLoggedIn()) {
 	</div>
 	<div class="input-groupA">
 		<label>Branch No: </label>
+
 		<select name="branch_num">
-		<option> SELECT BRANCH </option>
-						<?php
-					$link =mysqli_connect ("localhost","root","","mactea");
-					$que=mysqli_query($link,"SELECT * FROM branches");
-					while($col=mysqli_fetch_array($que)){
-				?>
-				<option><?php echo $col['br_name']; ?></option>
-					<?php } ?>
-</select>  
+			<option> SELECT BRANCH </option>
+			<option value="1">San Antonio</option>
+			<option value="2">Luna</option>
+			<option value="3">Calendola</option>
+		</select>
+
 		<p class="error"> <?php if (isset($errors['branch_num'])) echo $errors ['branch_num'];?></p>
 	</div>
 	<div class="input-groupA">

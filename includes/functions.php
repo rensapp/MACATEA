@@ -735,12 +735,13 @@ echo '<script>alert("New admin added successfully")</script>';
  }
  
   function registerStaff(){
-  global $db,$first_name,$last_name,$mobile_number,$email, $errors;
+  global $db,$first_name,$last_name,$mobile_number,$email, $branch_num, $errors;
   // receive all input values from the form
   $first_name    =  e($_POST['first_name']);
   $last_name    =  e($_POST['last_name']);
   $mobile_number    =  e($_POST['mobile_number']);
   $email       =  e($_POST['email']);
+  $branch_num       =  e($_POST['branch_num']);
   $password_1  =  e($_POST['password_1']);
   $password_2  =  e($_POST['password_2']);
 
@@ -756,6 +757,9 @@ echo '<script>alert("New admin added successfully")</script>';
   }
   if (empty($email)) { 
     $errors['email'] = "Please enter your email address.";
+  }
+  if (empty($branch_num)) { 
+    $errors['branch_num'] = "Please enter your email address.";
   }
   if (empty($password_1)) { 
     $errors['password'] = "Please enter your password."; 
@@ -789,8 +793,8 @@ echo '<script>alert("New admin added successfully")</script>';
   if (count($errors) == 0) {
    $password = md5($password_1);//encrypt the password before saving in the database
 
-    $query = "INSERT INTO users (first_name, last_name,mobile_number, email, user_type, password) 
-        VALUES('$first_name','$last_name','$mobile_number', '$email', 'staff', '$password')";
+    $query = "INSERT INTO users (first_name, last_name,mobile_number, email, branch_num, user_type, password) 
+        VALUES('$first_name','$last_name','$mobile_number', '$email', '$branch_num', 'staff', '$password')";
     mysqli_query($db, $query);
  
 echo '<script>alert("New admin added successfully")</script>';
@@ -1873,36 +1877,8 @@ function AddMacCoffeeSeries(){
 <script type="text/javascript">
 window.location="AddMacCoffeeSeries.php";
 // <updateMacColdBrew
-<?php }
-if (isset($_POST['deliveryUpdate'])) {
-	deliveryUpdate();
-}
 
-// REGISTER USER
-function deliveryUpdate(){
-	
-	// call these variables with the global keyword to make them available in function
-	global $db, $errors, $delivery_type;
-
-
-	// receive all input values from the form. Call the e() function
-    // defined below to escape form values
-	$id=$_SESSION['user']['id'];
-
-	$delivery_type =  e($_POST['delivery_type']);
-	
-		// register user if there are no errors in the form
-	if (count($errors) == 0) {
-		
-			$query = "Update users SET delivery_type='$delivery_type' WHERE id='$id'";
-			$result = mysqli_query($db, $query);
-	?>
-<script>
-     window.history.go(-2);
-</script>
-<?php
-// header('Location: address.php');
-// exit();
-}
+<?php 
+	}
 }
 ?>
