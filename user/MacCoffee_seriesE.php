@@ -32,6 +32,9 @@
 .darkbg{
 	background-color: black;
 }
+.ac_color{
+        color:#60a333;
+    }
 
 
 </style>
@@ -49,7 +52,7 @@
 			<div class="col-lg-3 col-md-3 col-sm-8 border border-success text-center p-2 darkbg rounded" >
 				<?php 
 					if ($category_name == 9) { ?>
-					<a href="MacCoffee_seriesE.php?category=9" class="text-success">
+					<a href="MacCoffee_seriesE.php?category=9" class="ac_color">
 				<?php }else { ?>
 					<a href="MacCoffee_seriesE.php?category=9" class="text-light">
 				<?php } ?>
@@ -59,7 +62,7 @@
 			<div class="col-lg-3 col-md-3 col-sm-8 border border-success text-center p-2 darkbg rounded">	
 				<?php 
 					if ($category_name == 10) { ?>
-					<a href="MacCoffee_seriesE.php?category=10" class="text-success">
+					<a href="MacCoffee_seriesE.php?category=10" class="ac_color">
 				<?php }else { ?>
 					<a href="MacCoffee_seriesE.php?category=10" class="text-light">
 				<?php } ?>			
@@ -69,7 +72,7 @@
 			<div class="col-lg-3 col-md-3 col-sm-8 border border-success text-center p-2 darkbg rounded">
 				<?php 
 					if ($category_name == 11) { ?>
-					<a href="MacCoffee_seriesE.php?category=11" class="text-success">
+					<a href="MacCoffee_seriesE.php?category=11" class="ac_color">
 				<?php }else { ?>
 					<a href="MacCoffee_seriesE.php?category=11" class="text-light">
 				<?php } ?>
