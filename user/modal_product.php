@@ -95,7 +95,7 @@
 							<label style="margin-top: 30px;">Select Variation</label> <br>
 							<?php
 								//sees the sizes what what their price is
-                                    $sizes = array("price_16oz", "price_22oz", "medium", "large", "oneliter");
+                                    $sizes = array("16oz", "22oz", "medium", "large", "oneliter");
                                     for ($i = 0; $i < count($sizes); $i++) {
                                         if ($fetch["$sizes[$i]"] > 0) {
                                     ?>

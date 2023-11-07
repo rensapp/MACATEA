@@ -1614,7 +1614,7 @@ function AddNutellaSeries(){
 	
 	// register user if there are no errors in the form
 	if (count($errors) == 0) {
-			$query = "INSERT INTO product (name, price_16oz, price_22oz, category,image_dir ) 
+			$query = "INSERT INTO product (name, 16oz, 22oz, category,image_dir ) 
 					  VALUES('$name','$price_16oz','$price_22oz','3','$filename')";
 			mysqli_query($db, $query);
 echo '<script>alert("New Product added successfully")</script>';
@@ -1664,7 +1664,7 @@ function AddNutellaOreoSeries(){
 	
 	// register user if there are no errors in the form
 	if (count($errors) == 0) {
-			$query = "INSERT INTO product (name, price_16oz, price_22oz, category,image_dir ) 
+			$query = "INSERT INTO product (name, 16oz, 22oz, category,image_dir ) 
 					  VALUES('$name','$price_16oz','$price_22oz','4','$filename')";
 			mysqli_query($db, $query);
 echo '<script>alert("New Product added successfully")</script>';
@@ -1868,7 +1868,7 @@ function AddMacCoffeeSeries(){
 	
 	// register user if there are no errors in the form
 	if (count($errors) == 0) {
-			$query = "INSERT INTO product (name, price, category,image_dir ) 
+			$query = "INSERT INTO product (name, large, category,image_dir ) 
 					  VALUES('$name','$price','$category','$filename')";
 			mysqli_query($db, $query);
 			echo '<script>alert("New Product added successfully")</script>';
@@ -1876,7 +1876,7 @@ function AddMacCoffeeSeries(){
 					?>
 <script type="text/javascript">
 window.location="AddMacCoffeeSeries.php";
-// <updateMacColdBrew
+<updateMacColdBrew
 
 <?php 
 	}
