@@ -16,8 +16,6 @@
 	$customer_email = $_SESSION['user']['email']; 
 	$res=mysqli_query($db,"SELECT * FROM users");
 	
-	
-	
 		$id = $_POST['id'];
 		$cid = $_POST['customer_id'];
 		$product_name = $_POST['product_name'];
@@ -47,7 +45,9 @@
 		mysqli_stmt_bind_param($stmt, "si", $delivery_type_update, $cid);
 		mysqli_stmt_execute($stmt);
 		}
-		header("location: NutellaOreo_series.php");
+		// header("location: NutellaOreo_series.php");
+		echo '<script>window.history.back();</script>';
+    	exit();
 		?>
 		<!-- <script>
 			 window.history.go(-1);
@@ -141,3 +141,28 @@
 			</form>
 		</div>
 	</div>
+
+	<script>
+
+//use to navigate to the previous page once the form has been used.
+function submitForm(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Serialize the form data
+    var formData = new FormData(event.target);
+
+    // Send the form data to "modal_product.php" using AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "modal_product.php", true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Optionally, you can handle the response from "modal_product.php" here.
+            // For example, you can check if the submission was successful and provide user feedback.
+            // Then, you can manually navigate back in the browser's history using window.history.go(-1).
+            window.history.go(0);
+        }
+    };
+    xhr.send(formData);
+}
+</script>
+
