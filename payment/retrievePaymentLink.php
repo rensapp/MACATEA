@@ -39,14 +39,14 @@ if ($response_data !== null) {
     // echo $paymentLink_status;
 
 if($paymentLink_status == "disabled"){
-  $pay_stat = "completed";
+  $pay_stat = "Completed";
 } else{
-  $pay_stat = "pending";
+  $pay_stat = "Pending";
 }
 
 $pay_id = $fetch_orders['payment_id'];
 
-  if($fetch_orders['payment_status'] == "pending"){
+  if($fetch_orders['payment_status'] == "Pending"){
     $update_pay_stmt = $conn->prepare("UPDATE orders SET payment_status = :payment_status WHERE payment_id = :pay_id");
     $update_pay_stmt->bindParam(':payment_status', $pay_stat);
     $update_pay_stmt->bindParam(':pay_id', $pay_id);
