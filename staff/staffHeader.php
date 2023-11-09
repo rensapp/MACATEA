@@ -36,7 +36,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div 
-            class="collapse navbar-collapse " 
+            class="collapse navbar-collapse" 
             id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item active h5 "data-aos="fade-down" data-aos-delay="50">
@@ -51,10 +51,18 @@
                 <li class="nav-item active h5 "data-aos="fade-down" data-aos-delay="100">
                     <a href="sRewards.php" class="nav-link text-success fw-bold">Rewards</a>
                 </li>
+                <li class="nav-item active h5"data-aos="fade-down" data-aos-delay="100">
+                    <a href="#" onclick="logout()" class="nav-link text-success fw-bold">Logout</a>
+                </li>
             </ul>
         </div>
     </nav>
 </div>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> 
+    <script>
+        function logout(){
+            window.location.href="../login_page/login.php?logout='1'"
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> 
 </body>
 </html>

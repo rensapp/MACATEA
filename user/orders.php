@@ -92,7 +92,7 @@ if (!isLoggedIn()) {
 <?php
    }
 }else{
-   echo '<p class="empty">no orders placed yet!</p>';
+   echo '<p class="mt-4 h2 fw-semibold">No orders placed yet!</p>';
 }
 ?>
 	</div>

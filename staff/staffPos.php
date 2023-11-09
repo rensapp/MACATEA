@@ -74,10 +74,20 @@
                         <?php } else { ?>
                             <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=7">Mactea Special</a></li>
                         <?php } ?>
-                        <?php if($category_name == 8) { ?>
-                            <li class="my-2"><a class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=8">Mac Coffee</a></li>
+                        <?php if($category_name == 9) { ?>
+                            <li class="my-2"><a class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=9">Mac Cold Brew</a></li>
                         <?php } else { ?>
-                            <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=8">Mac Coffee</a></li>
+                            <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=9">Mac Cold Brew</a></li>
+                        <?php } ?>
+                        <?php if($category_name == 10) { ?>
+                            <li class="my-2"><a class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=10">Mac Latte</a></li>
+                        <?php } else { ?>
+                            <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=10">Mac Latte</a></li>
+                        <?php } ?>
+                        <?php if($category_name == 11) { ?>
+                            <li class="my-2"><a class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=11">Mac Signature</a></li>
+                        <?php } else { ?>
+                            <li class="my-2"><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold h5 text-decoration-none" href="staffPos.php?category=11">Mac Signature</a></li>
                         <?php } ?>
 
                     </ul>

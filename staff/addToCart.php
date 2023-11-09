@@ -59,7 +59,7 @@ if(isset($_POST['add_to_cart'])){
                             <div class="col-md-6 p-2 border rounded border-success">
                                 <div class="form-group">
                                 <?php
-                                    $sizes = array("price_16oz", "price_22oz", "medium", "large", "oneliter");
+                                    $sizes = array("16oz", "22oz", "medium", "large", "oneliter");
                                     for ($i = 0; $i < count($sizes); $i++) {
                                         if ($fetch_products["$sizes[$i]"] > 0) {
                                     ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2023 at 08:52 AM
+-- Generation Time: Nov 09, 2023 at 02:10 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -79,8 +79,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`oid`, `customer_id`, `customer_email`, `image_dir`, `name`, `price`, `size`, `addons`, `sinker`, `quantity`, `total_price`) VALUES
-(7, 32, 'rensapp30@gmail.com', 'StrawberryNutellaOreo.png', 'Strawberry', 120, ' 16oz', 0, ' None', 1, 120),
-(161, 14, 'rensapp30@gmail.com', '329676046_1155833698468844_3701780936226479719_n.jpg', 'Sweet Black Hazelnut', 89, 'price_16oz', 0, ' No Sinker', 1, 89);
+(7, 32, 'rensapp30@gmail.com', 'StrawberryNutellaOreo.png', 'Strawberry', 120, ' 16oz', 0, ' None', 1, 120);
 
 -- --------------------------------------------------------
 
@@ -283,7 +282,11 @@ INSERT INTO `orders` (`order_id`, `customer_id`, `name`, `email`, `phone`, `addr
 (196, 14, 'ren poso', 'rensapp30@gmail.com', '09493338725', '46892 hilljos 46892 lissiid san pedro 5833 juanii', 'Pick-up', 'cod', 'Strawberry(1) - No Sinker', '125', 'completed', '11/05/2023 5:32 pm', 2, '', '', '', 1, '0000-00-00'),
 (197, 14, 'ren poso', 'rensapp30@gmail.com', '09493338725', '123 hilljosi 123 lissiid san pedro 5833 juanii', 'Deliver', 'cod', 'Strawberry(1) - No Sinker', '155', 'Completed', '11/05/2023 6:55 pm', 2, '', '', '', 1, '0000-00-00'),
 (198, 14, 'ren poso', 'rensapp30@gmail.com', '09493338725', '123 hilljosi 123 lissiid san pedro 5833 juanii', 'Pick-up', 'cod', 'Lychee(1) - No Sinker', '140', 'Pending', '11/05/2023 7:21 pm', 2, '', '', '', 1, '0000-00-00'),
-(199, 14, 'ren poso', 'rensapp30@gmail.com', '09493338725', '123 hilljosi 123 lissiid san pedro 5833 juanii', 'Deliver', 'cod', 'Mango(1) - No Sinker', '108', 'Pending', '11/05/2023 7:22 pm', 2, '', '', '', 1, '0000-00-00');
+(199, 14, 'ren poso', 'rensapp30@gmail.com', '09493338725', '123 hilljosi 123 lissiid san pedro 5833 juanii', 'Deliver', 'cod', 'Mango(1) - No Sinker', '108', 'Pending', '11/05/2023 7:22 pm', 2, '', '', '', 1, '0000-00-00'),
+(200, 14, 'ren poso', 'rensapp30@gmail.com', '09493338725', '123 hilljosi 123 lissiid san pedro 5833 juanii', 'Deliver', 'cod', 'Sweet Black Hazelnut(1) - Coffee jelly', '139', 'Pending', '11/07/2023 5:01 pm', 2, '', '', '', 1, '0000-00-00'),
+(203, 14, 'ren poso', 'rensapp30@gmail.com', '09493338725', '123 hilljosi 123 lissiid san pedro 5833 juanii', 'Pick-up', 'online', 'Vanilla(1) - No Sinker', '125', 'Pending', '11/08/2023 5:45 pm', 2, 'Completed', 'n2bodx34itje10m5kxum1aio', 'https://app-sandbox.nextpay.world/#/pl/9eAutS0RY', 1, '0000-00-00'),
+(204, 14, 'ren poso', 'rensapp30@gmail.com', '09493338725', '123 hilljosi 123 lissiid san pedro 5833 juanii', 'Deliver', 'cod', 'Chocolate(1) - No Sinker', '155', 'Pending', '11/08/2023 5:49 pm', 2, '', '', '', 1, '0000-00-00'),
+(205, 33, '', '', '', '', '', 'POS', 'Kiwi(1) - Popping Boba', '155', 'preparing', '11/09/2023 8:14 pm', 2, '', '', '', 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -295,8 +298,8 @@ CREATE TABLE `product` (
   `id` int(250) NOT NULL,
   `name` varchar(100) NOT NULL,
   `price` int(255) NOT NULL,
-  `price_16oz` int(255) NOT NULL,
-  `price_22oz` int(255) NOT NULL,
+  `16oz` int(255) NOT NULL,
+  `22oz` int(255) NOT NULL,
   `medium` int(255) NOT NULL,
   `large` int(255) NOT NULL,
   `oneliter` int(255) NOT NULL,
@@ -308,11 +311,10 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `price`, `price_16oz`, `price_22oz`, `medium`, `large`, `oneliter`, `category`, `image_dir`) VALUES
+INSERT INTO `product` (`id`, `name`, `price`, `16oz`, `22oz`, `medium`, `large`, `oneliter`, `category`, `image_dir`) VALUES
 (1, 'Nutella Oreo', 0, 120, 150, 0, 0, 0, '4', 'NutellaOreo.png'),
 (2, 'Wintermelon', 0, 120, 150, 0, 0, 0, '4', 'WintermelonNutellaOreo.png'),
-(6, 'Milktea Okinawa', 0, 0, 0, 79, 89, 109, '1', 'Matcha.png'),
-(13, 'Sweet Black Hazelnut', 49, 89, 0, 0, 0, 0, '9', '329676046_1155833698468844_3701780936226479719_n.jpg'),
+(6, 'Classic Milktea', 0, 0, 0, 79, 89, 109, '1', '395125878_748571717315494_5770851412891043704_n-removebg-preview.png'),
 (15, 'Strawberry', 0, 120, 125, 0, 0, 0, '4', 'StrawberryNutellaOreo.png'),
 (16, 'Chocolate', 0, 120, 125, 0, 0, 0, '4', 'Choco Nutella Oreo.png'),
 (17, 'Dark Choco', 0, 120, 125, 0, 0, 0, '4', 'Dark Choco Nutella Oreo.png'),
@@ -330,14 +332,94 @@ INSERT INTO `product` (`id`, `name`, `price`, `price_16oz`, `price_22oz`, `mediu
 (29, 'Thai Nutella Oreo', 0, 120, 125, 0, 0, 0, '4', 'Thai Nutella Oreo.png'),
 (30, 'Black Choco Meiji', 0, 120, 125, 0, 0, 0, '4', 'Black Choco Meiji Nutella Oreo.png'),
 (31, 'Java Chip', 0, 120, 125, 0, 0, 0, '4', 'Java Chip Nutella Oreo.png'),
-(32, 'Caramel Macchiato', 59, 0, 0, 0, 0, 0, '11', 'Caramel Macchiato.jpg'),
-(33, 'Matcha Latte', 79, 0, 0, 0, 0, 0, '10', 'Matcha Latter.jpg'),
 (34, 'Green Apple', 0, 0, 0, 78, 88, 140, '5', 'Green Apple.png'),
 (35, 'Kiwi', 0, 0, 0, 78, 88, 140, '5', 'Kiwi Yakult.png'),
 (36, 'Lychee', 0, 0, 0, 78, 88, 140, '5', 'Lychee Yakult.png'),
 (37, 'Mango', 0, 0, 0, 78, 88, 140, '5', 'Mango Yakult.png'),
 (38, 'Strawberry', 0, 0, 0, 78, 88, 140, '5', 'Strawberry Yakult.png'),
-(39, 'Kumquat & Lemon', 0, 0, 0, 78, 88, 140, '5', 'Kimquat and Lemon.png');
+(39, 'Kumquat & Lemon', 0, 0, 0, 78, 88, 140, '5', 'Kimquat and Lemon.png'),
+(40, 'Wintermelon', 0, 0, 0, 78, 88, 140, '1', '395090229_746956817476984_694706399547163224_n-removebg-preview.png'),
+(41, 'Strawberry', 0, 0, 0, 78, 88, 125, '1', '374740341_713220997517233_1134576980952384570_n-removebg-preview.png'),
+(42, 'Chocolate', 0, 0, 0, 78, 88, 125, '1', '333403171_863102614991955_2806476135855808970_n-removebg-preview.png'),
+(43, 'Dark Choco', 0, 0, 0, 78, 88, 125, '1', '327293519_712171593959021_8482814029252736337_n-removebg-preview.png'),
+(44, 'Taro', 0, 0, 0, 78, 88, 125, '1', '320157286_1492548127898221_4392803602832225796_n-removebg-preview-removebg-preview.png'),
+(45, 'Milo', 0, 0, 0, 78, 88, 125, '1', '393720203_743194921186507_3323963335814394868_n-removebg-preview.png'),
+(46, 'Hokkaido', 0, 0, 0, 78, 88, 125, '1', '395125878_748571717315494_5770851412891043704_n__1_-removebg-preview.png'),
+(47, 'Okinawa', 0, 0, 0, 78, 88, 125, '1', '319398985_2123311674522089_8577338845843521032_n-removebg-preview.png'),
+(48, 'Matcha', 0, 0, 0, 78, 88, 125, '1', 'Mattcha-removebg-preview.png'),
+(49, 'Vanilla', 0, 0, 0, 78, 88, 125, '1', '371343298_710162107823122_6703488646894845179_n-removebg-preview.png'),
+(50, 'Cappucino', 0, 0, 0, 78, 88, 125, '1', '324108824_6410921272254742_1998246910896898177_n-removebg-preview.png'),
+(51, 'Salted Caramel', 0, 0, 0, 78, 88, 125, '1', '323638780_472995215020434_4373535629616452641_n-removebg-preview.png'),
+(52, 'White Rabbit', 0, 0, 0, 78, 88, 125, '1', '166790938_1655238624662732_7234035238296564288_n-removebg-preview-removebg-preview.png'),
+(53, 'Choco Matcha', 0, 0, 0, 78, 88, 125, '1', '312465085_2080437488809508_344772824758354371_n-removebg-preview.png'),
+(54, 'Blueberry', 0, 0, 0, 78, 88, 125, '1', '187931467_1689616711224923_4793468267078760791_n-removebg-preview.png'),
+(55, 'Thai Milktea', 0, 0, 0, 78, 88, 125, '1', '311440894_2071894092997181_8299719165444971138_n-removebg-preview-removebg-preview.png'),
+(56, 'Black Choco Meiji', 0, 0, 0, 78, 88, 125, '1', '119701825_1504078206445442_237267964293915033_n-removebg-preview.png'),
+(57, 'Java Chip', 0, 0, 0, 78, 88, 125, '1', '311813433_2075533679299889_8353690748005301164_n-removebg-preview.png'),
+(58, 'Oreo Milktea', 0, 0, 0, 88, 98, 150, '2', '122995986_229429315181248_6401561084896750849_n-removebg-preview-removebg-preview.png'),
+(59, 'Wintermelon', 0, 0, 0, 88, 98, 150, '2', '277246609_1914679558718636_2852027391547553702_n-removebg-preview.png'),
+(60, 'Strawberry', 0, 0, 0, 88, 98, 150, '2', '305798694_2043232135863377_3810388132590961717_n-removebg-preview-removebg-preview.png'),
+(61, 'Chocolate', 0, 0, 0, 88, 98, 150, '2', '131781437_1581408078712454_6510566575754074657_n-removebg-preview-removebg-preview.png'),
+(62, 'Dark Chocolate', 0, 0, 0, 88, 98, 150, '2', '305798694_2043232135863377_3810388132590961717_n-removebg-preview__1_-removebg-preview.png'),
+(63, 'Taro', 0, 0, 0, 88, 98, 150, '2', '131781437_1581408078712454_6510566575754074657_n-removebg-preview (1).png'),
+(64, 'Milo Oreo', 0, 0, 0, 88, 98, 150, '2', '309207748_2058564147663509_6043149349012078408_n-removebg-preview.png'),
+(65, 'Hokkaido', 0, 0, 0, 88, 98, 150, '2', 'Hokkaido-removebg-preview.png'),
+(66, 'Okinawa', 0, 0, 0, 88, 98, 150, '2', 'Okinawa-removebg-preview.png'),
+(67, 'Matcha', 0, 0, 0, 88, 98, 150, '2', 'Matcha_And_WIntermelon-removebg-preview.png'),
+(68, 'Vanilla', 0, 0, 0, 88, 98, 150, '2', 'Vanilla-removebg-preview (1).png'),
+(69, 'Cappucino', 0, 0, 0, 88, 98, 150, '2', 'Cappucino-removebg-preview.png'),
+(70, 'Salted Caramel', 0, 0, 0, 88, 98, 150, '2', 'Salted_Caramel-removebg-preview-removebg-preview.png'),
+(71, 'White Rabbit', 0, 0, 0, 88, 98, 150, '2', '107013822_1444525262400737_6998573544507348125_n-removebg-preview.png'),
+(72, 'Choco Matcha', 0, 0, 0, 88, 98, 150, '2', 'Choco_Matcha-removebg-preview.png'),
+(73, 'Blueberry', 0, 0, 0, 88, 98, 150, '2', '184832546_1684407905079137_6800310702532743052_n-removebg-preview-removebg-preview.png'),
+(74, 'Thai Oreo', 0, 0, 0, 88, 98, 150, '2', 'Thai_Oreo-removebg-preview.png'),
+(75, 'Black Choco Meiji', 0, 0, 0, 88, 98, 150, '2', 'Black_choco_Meiji-removebg-preview.png'),
+(76, 'Java Chip', 0, 0, 0, 88, 98, 150, '2', 'Java-removebg-preview-removebg-preview.png'),
+(77, 'Kumquat & Lemon', 0, 0, 0, 78, 88, 140, '6', 'Kumquat-removebg-preview.png'),
+(78, 'Passion Kiwi', 0, 0, 0, 78, 88, 140, '6', 'Passion_Kiwi-removebg-preview-removebg-preview.png'),
+(79, 'Lychee Kiwi', 0, 0, 0, 78, 88, 140, '6', 'Lychee_Kiwi-removebg-preview (1).png'),
+(80, 'Green Apple', 0, 0, 0, 78, 88, 140, '6', 'Green_Apple__2_-removebg-preview.png'),
+(81, 'Kiwi', 0, 0, 0, 78, 88, 140, '6', 'Kiwi-removebg-preview-removebg-preview.png'),
+(82, 'Lychee', 0, 0, 0, 78, 88, 140, '6', 'lychee-removebg-preview (1).png'),
+(83, 'Mango', 0, 0, 0, 78, 88, 140, '6', 'Mango-removebg-preview.png'),
+(84, 'Strawberry', 0, 0, 0, 78, 88, 140, '6', 'Strawberry-removebg-preview.png'),
+(85, 'Blueberry', 0, 0, 0, 78, 88, 140, '6', 'Blueberry-removebg-preview__1_-removebg-preview (1).png'),
+(86, 'Mac Cookie', 0, 0, 0, 0, 120, 0, '7', 'Mac_Cookie-removebg-preview-removebg-preview.png'),
+(87, 'Strawberry Choco Cream Cheese', 0, 0, 0, 0, 120, 0, '7', 'Strawberry_Choco-removebg-preview.png'),
+(88, 'Red Velvet Creeamcheese', 0, 0, 0, 0, 120, 0, '7', 'Red_Velvet_Cream_cheese-removebg-preview.png'),
+(89, 'Choco Strawberry Meiji', 0, 0, 0, 0, 105, 0, '7', 'Choco_Strrawberry_Meiji-removebg-preview.png'),
+(90, 'Nutella Milktea', 0, 115, 120, 0, 0, 0, '3', 'Nutella Milktea.png'),
+(91, 'Wintermelon', 0, 115, 120, 0, 0, 0, '3', 'Wintermelon Nutella.png'),
+(92, 'Strawberry', 0, 115, 120, 0, 0, 0, '3', 'Strawberry.png'),
+(93, 'Chocolate', 0, 115, 120, 0, 0, 0, '3', 'Chocolate.png'),
+(94, 'Dark Chocolate', 0, 115, 120, 0, 0, 0, '3', '368033394_869821337999560_1122485635003160720_n.png'),
+(95, 'Taro', 0, 115, 120, 0, 0, 0, '3', 'Taro.png'),
+(96, 'Milo Nutella', 0, 115, 120, 0, 0, 0, '3', 'Milo Nutella.png'),
+(97, 'Hokkaido', 0, 115, 120, 0, 0, 0, '3', 'Hokkaido.png'),
+(98, 'Okinawa', 0, 115, 120, 0, 0, 0, '3', 'Okinawa Nutella.png'),
+(99, 'Matcha', 0, 115, 120, 0, 0, 0, '3', 'Matcha.png'),
+(100, 'Vanilla', 0, 115, 120, 0, 0, 0, '3', '371209150_4318754108350125_5185398890254178104_n.png'),
+(101, 'Cappucino', 0, 115, 120, 0, 0, 0, '3', 'Cappuccino.png'),
+(102, 'Salted Caramel', 0, 115, 120, 0, 0, 0, '3', 'Salted Caramel.png'),
+(103, 'White Rabbit', 0, 115, 120, 0, 0, 0, '3', 'White Rabbit.png'),
+(104, 'Choco Matcha', 0, 115, 120, 0, 0, 0, '3', 'Choco Matcha.png'),
+(105, 'Blueberry', 0, 115, 120, 0, 0, 0, '3', 'Blueberry.png'),
+(106, 'Thai Nutella', 0, 115, 120, 0, 0, 0, '3', 'Thai Nutella.png'),
+(107, 'Black Choco Meiji', 0, 115, 120, 0, 0, 0, '3', 'Dark Choco Meiji.png'),
+(108, 'Java Chip', 0, 115, 120, 0, 0, 0, '3', 'Java Chip.png'),
+(126, 'Sweet Black Original', 0, 0, 0, 0, 49, 0, '9', 'cold-brew-iced-coffee-peet39s-coffee.png'),
+(127, 'Sweet Black Vanilla', 0, 0, 0, 0, 49, 0, '9', 'Sweet Black Vanila - Mac Cold Brew.jpg'),
+(128, 'Sweet Black Hazelnut', 0, 0, 0, 0, 49, 0, '9', 'Hazelnut-Cold-Brew.jpg'),
+(129, 'Latte', 0, 0, 0, 0, 49, 0, '10', 'Mac Latte.jpg'),
+(130, 'Mocha', 0, 0, 0, 0, 49, 0, '10', 'Mocha Latte.jpg'),
+(131, 'Vanilla', 0, 0, 0, 0, 49, 0, '10', 'Vanilla Latte.jpg'),
+(132, 'Hazelnut', 0, 0, 0, 0, 49, 0, '10', 'Hazelnut Latte.jpg'),
+(133, 'Salted Caramel', 0, 0, 0, 0, 59, 0, '10', 'Salted Caramel.jpg'),
+(134, 'Caramel Macchiato', 0, 0, 0, 0, 59, 0, '10', 'Caramel Mach.jpg'),
+(135, 'Nutella Latte', 0, 0, 0, 0, 79, 0, '11', 'Nutella Latte - Mac Signature.jpg'),
+(136, 'Creem Cheese Latte', 0, 0, 0, 0, 79, 0, '11', 'Cream Cheese Latte - Mac Signature.jpg'),
+(137, 'Taro Latte', 0, 0, 0, 0, 79, 0, '11', 'Taro Latte - Mac Signature.jpg'),
+(138, 'Matcha Latte', 0, 0, 0, 0, 79, 0, '11', 'Mattcha Latte - Mac Signature.jpg');
 
 -- --------------------------------------------------------
 
@@ -393,7 +475,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `google_id`, `email`, `password`, `user_type`, `first_name`, `last_name`, `mobile_number`, `delivery_type`, `status`, `latitude`, `longitude`, `streetnum`, `streetname`, `barangay`, `city`, `province`, `zipcode`, `branch_num`) VALUES
 (1, '', 'hans@gmail.com', 'e2223f6a2201ad51f38fd60dcc69d107', 'admin', 'Hans', 'Bautista', '09399501775', 'None', 0, '0.00000000', '0.00000000', '', '', '', '', '', '', ''),
-(14, '', 'rensapp30@gmail.com', '16d7a4fca7442dda3ad93c9a726597e4', 'user', 'ren', 'poso', '09493338725', 'Deliver', 1, '14.36092340', '121.05228710', '123', 'hilljosi', 'lissiid', 'san pedro', 'juanii', '5833', '2'),
+(14, '', 'rensapp30@gmail.com', '16d7a4fca7442dda3ad93c9a726597e4', 'user', 'ren', 'poso', '09493338725', 'None', 1, '14.36092540', '121.05228260', '123', 'hilljosi', 'lissiid', 'san pedro', 'juanii', '5833', '2'),
 (15, '', 'camill@gmail.com', 'e2223f6a2201ad51f38fd60dcc69d107', 'user', 'camille', 'buban', '09399501775', 'delivery', 0, '0.00000000', '0.00000000', '', '', '', '', '', '', ''),
 (16, '', 'leony@gmail.com', 'e2223f6a2201ad51f38fd60dcc69d107', 'user', 'Leonya1', 'Valete', '09399501775', 'delivery', 0, '0.00000000', '0.00000000', '', '', '', '', '', '', ''),
 (23, '', 'hans123@gmail.com', '4e76dd740d51107dce361d1af9a4d280', 'admin', 'Hans', 'Pogi', '09399501775', '', 0, '0.00000000', '0.00000000', '', '', '', '', '', '', ''),
@@ -402,8 +484,9 @@ INSERT INTO `users` (`id`, `google_id`, `email`, `password`, `user_type`, `first
 (28, '', 'renandreip@gmail.com', 'b5b73fae0d87d8b4e2573105f8fbe7bc', 'user', 'Ren', 'Poquiz', '09399501775', 'None', 0, '0.00000000', '0.00000000', '', '', '', '', '', '', ''),
 (30, '', 'hansjeromebautista025@gmail.com', 'e2223f6a2201ad51f38fd60dcc69d107', 'user', 'Hans', 'Bautista', '09399501775', 'None', 1, '0.00000000', '0.00000000', '1665', 'Jasmin St.', 'San Vicente', 'San Pedro', 'Laguna', '4023', ''),
 (31, '107126903698599061443', 'hansjeromebautista025@gmail.com', '', '', 'Hans Jerome Bautista', '', '', '', 0, '0.00000000', '0.00000000', '', '', '', '', '', '', ''),
-(33, '', 'staff@gmail.com', 'de9bf5643eabf80f4a56fda3bbb84483', 'staff', 'staff', 'test', '09878726374', 'N/A', 1, '0.00000000', '0.00000000', '', '', '', '', '', '', '3'),
-(34, '', 'admin@gmail.com', '0192023a7bbd73250516f069df18b500', 'admin', 'ad', 'min', '09999999999', 'None', 1, '0.00000000', '0.00000000', '', '', '', '', '', '', '');
+(33, '', 'staff@gmail.com', 'de9bf5643eabf80f4a56fda3bbb84483', 'staff', 'staff', 'test', '09878726374', 'N/A', 1, '0.00000000', '0.00000000', '', '', '', '', '', '', '2'),
+(34, '', 'admin@gmail.com', '0192023a7bbd73250516f069df18b500', 'admin', 'ad', 'min', '09999999999', 'None', 1, '0.00000000', '0.00000000', '', '', '', '', '', '', ''),
+(36, '', 'staff2@gmail.com', 'de9bf5643eabf80f4a56fda3bbb84483', 'staff', 'staff2', 'staff', '09878736767', '', 0, '0.00000000', '0.00000000', '', '', '', '', '', '', '2');
 
 --
 -- Indexes for dumped tables
@@ -484,7 +567,7 @@ ALTER TABLE `branches`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `oid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
+  MODIFY `oid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -514,13 +597,13 @@ ALTER TABLE `mobile_number`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=200;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=206;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
 -- AUTO_INCREMENT for table `rewards`
@@ -532,7 +615,7 @@ ALTER TABLE `rewards`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

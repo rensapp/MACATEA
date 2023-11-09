@@ -7,6 +7,7 @@ include('../includes/functions.php');;
    $select_id= $conn->prepare("SELECT * FROM `users` WHERE id = ?");
    $select_id->execute([$staff_id]);
    $fetch_id = $select_id->fetch(PDO::FETCH_ASSOC);
+   
    $staff_brNum = $fetch_id['branch_num'];
 
 if(!isset($staff_id)){
