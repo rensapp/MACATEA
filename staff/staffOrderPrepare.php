@@ -123,7 +123,7 @@ if(isset($_GET['delete'])){
       <?php
       }
       }else{
-         echo '<p class="empty">No Orders Placed Yet!</p>';
+         echo '<p class="empty fw-semibold h3">No Orders Placed Yet!</p>';
       }
       ?>
 

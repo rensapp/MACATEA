@@ -23,7 +23,6 @@ if(!isset($staff_id)){
 <body>
     <?php include 'staffHeader.php'; ?>
     <div class="container">
-        <h3 class="mt-3 text-center">Results</h3>
         <div class="row mt-4">
             <div class="col-10 ">
                 <form action="../staff/staffCoupSearch.php" class="d-inline" name="form1" method="post">
@@ -34,6 +33,7 @@ if(!isset($staff_id)){
                     <button type="submit" name="reset" class="btn btn-danger">RESET</button>
                 </form>
             </div>
+            <h3 class="mt-4 text-center">Results</h3>
         </div>
 
         <table class="table table-hover mt-3" >

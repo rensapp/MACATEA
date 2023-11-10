@@ -2,8 +2,8 @@
 require('../receipt/fpdf/fpdf.php');
 include '../includes/config.php';
 
+
 $order_id = $_GET['order_id'];
-// $order_id=206;
 
 $select_order_id= $conn->prepare("SELECT * FROM `orders` WHERE order_id = ?");
 $select_order_id->execute([$order_id]);
@@ -47,6 +47,8 @@ foreach ($productArray as $product) {
 }
 
 $tax= $subtotal * 0.08;
+
+// two decimals 
 $formattedTax = number_format($tax, 2);
 $total= $subtotal + $formattedTax;
 $formattedTotal = number_format($total, 2);
@@ -85,17 +87,17 @@ $pdf->Ln(2);
 // $pdf->Cell(0, 10, 'Transaction ID: 123456789', 0, 1);
 // $pdf->Ln(2);
 
-// Items Purchased
-$pdf->Cell(0, 10, 'Items Purchased:', 0, 1);
+// Items P  urchased
+$pdf->Cell(0, 8, 'Items Purchased:', 0, 1);
 $pdf->Ln(2);
 
 // Output the results
 $pdf->SetFont('Arial', '', 11);
 for ($i = 0; $i < count($productNames); $i++) {
-    $pdf->Cell(0, 10, "$productNames[$i] $additions[$i]", 0, 1);
+    $pdf->Cell(0, 8, "$productNames[$i] $additions[$i]", 0, 1);
 }
 $pdf->Cell(0, 5, str_repeat("-", 45) , 0, 1);
-$pdf->Ln(4);
+$pdf->Ln(2);
 
 // Subtotal
 $pdf->Cell(0, 10, "Subtotal:                php $subtotal.00", 0, 1);
