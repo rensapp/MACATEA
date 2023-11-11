@@ -111,7 +111,9 @@ if(isset($_GET['delete'])){
                <div class="flex-btn text-center">
                   <input type="submit" name="update_order" class="btn option-btn btn-success px-lg-5 px-md-3" style="display:none;" value="update" disabled>
                   <a href="staffOrderShipComplete.php?delete=<?= $fetch_orders['order_id']; ?>" class="btn delete-btn btn-danger px-lg-5 px-md-3" onclick="return confirm('delete this order?');">delete</a>
-                  <a href="../receipt/generate_receipt.php?order_id=<?= $fetch_orders['order_id']; ?>" target="_blank" class="btn btn-primary px-lg-5 px-md-3" onclick="return confirm('view this order?');">view receipt</a>
+                  <?php if($fetch_orders['payment_mode'] == "POS") { ?>
+                        <a href="../receipt/generate_receipt.php?order_id=<?= $fetch_orders['order_id']; ?>" target="_blank" class="btn btn-primary px-lg-5 px-md-3" onclick="return confirm('view this order?');">view receipt</a>
+                  <?php } ?>
                </div>
             </form>
          </div>
