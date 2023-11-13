@@ -28,8 +28,8 @@
 <?php 
     include('../includes/connection.php');
     if(isset($_POST["change"])){
-        $otp = $_SESSION['otp'];
-        $email = $_SESSION['mail'];
+        // $otp = $_SESSION['otp'];
+        // $email = $_SESSION['mail'];
 
 		$password_1 = $_POST ['password_1'];
 		$password_2 = $_POST ['password_2'];
@@ -65,54 +65,61 @@
 
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-
-
-    <!-- Fonts -->
-
-
-  <link rel="stylesheet" type="text/css" href="../css/loginpage.css?v=<?php echo time();?>">
-
-
-    <!-- Bootstrap CSS -->
-
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <title>Verification</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Change Password</title>
 </head>
-<body>
-
-<div class="header">
-		<h2>Change Password</h2>
-	</div>
-	  <form action="" name="form1" method="post">
-		<div class="input-group">
-		<label>Password</label>
-		<input type="password" name="password_1" autocomplete="current-password" id="id_password">
-	<i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer; margin-top: 6px;">
-			<script>
-			const togglePassword = document.querySelector('#togglePassword');
-  const password = document.querySelector('#id_password');
-
-  togglePassword.addEventListener('click', function (e) {
-    // toggle the type attribute
-    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-    password.setAttribute('type', type);
-    // toggle the eye slash icon
-    this.classList.toggle('fa-eye-slash');
-});
-</script> </i>
-		<p class="error"> <?php if (isset($errors['password'])) echo $errors ['password'];?></p>
-		<p class="error"> <?php if (isset($errors['password4'])) echo $errors ['password4'];?></p>
-  </div>
-  <div class="input-group">
-   <label>Confirm password</label>
-   <input type="password" name="password_2">
-   <p class="error"> <?php if (isset($errors['password2'])) echo $errors ['password2'];?></p>
-   <p class="error"> <?php if (isset($errors['password3'])) echo $errors ['password3'];?></p>
-  </div>
-		<div class="input-group">
-			<button type="submit" class="btn" name="change"> Change </button>
-		</div>
-	</form>
+<style>
+    body, html {
+         overflow-x: hidden;
+    }
+</style>
+<body style="background-image: url('../images/macteabg.png'); background-repeat: no-repeat;">
+    <div class="container border border-dark rounded mt-5" style="background-color: white;">
+        <div class="row p-3 border-bottom border-dark" style="background-color: #008000">
+            <h2 class="text-center text-light border-bottom pb-2">Change Password</h2>
+        </div>
+	      <form action="" name="form1" method="post">
+		    <div class="input-group mt-5 row">
+          <div class="text-center">
+		        <label>Password</label>
+		        <input type="password" class="w-50 ms-5" name="password_1" autocomplete="current-password" id="id_password">
+	          <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer; margin-top: 6px;">
+            <script>
+              const togglePassword = document.querySelector('#togglePassword');
+              const password = document.querySelector('#id_password');
+              togglePassword.addEventListener('click', function (e) {
+              // toggle the type attribute
+              const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+              password.setAttribute('type', type);
+              // toggle the eye slash icon
+              this.classList.toggle('fa-eye-slash');
+              });
+            </script>
+            </i>
+          </div>
+          <p class="error text-danger text-center my-0 ms-5"> <?php if (isset($errors['password'])) echo $errors ['password'];?></p>
+          <p class="error text-danger text-center my-0 ms-5"> <?php if (isset($errors['password4'])) echo $errors ['password4'];?></p>
+        </div>
+        <div class="input-group row mt-3">
+          <div class="text-center">
+            <label>Confirm password</label>
+            <input type="password" class="w-50" name="password_2">
+          </div>
+          <p class="error text-danger text-center my-0 ms-5"> <?php if (isset($errors['password2'])) echo $errors ['password2'];?></p>
+          <p class="error text-danger text-center my-0 ms-5"> <?php if (isset($errors['password3'])) echo $errors ['password3'];?></p>
+        </div>
+		    <div class="row p-3">
+          <div class="col"></div>
+          <div class="col-4">
+			      <button type="submit" class="btn btn-dark w-100 rounded text-light" style="background-color: #008000;" name="change"> Change </button>
+		      </div>
+          <div class="col"></div>
+        </div>
+	    </form>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
