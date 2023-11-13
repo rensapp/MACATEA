@@ -84,7 +84,7 @@
                     </a>
                 </li>
                 <li class="nav-item active h5 "data-aos="fade-down" data-aos-delay="100">
-                    <a href="userRewards.php" class="nav-link mtcolor fw-bold" style="color: #60a333;">MyRewards</a>
+                    <a href="userRewards.php" class="nav-link mtcolor fw-bold" style="color: #60a333;">My Rewards</a>
                 </li>
             </ul>
         </div>

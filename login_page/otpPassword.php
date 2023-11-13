@@ -41,8 +41,8 @@
             mysqli_query($connect, "UPDATE users SET status = 1 WHERE email = '$email'");
             ?>
              <script>
-                 alert("Verfiy account done, you may sign in now");
-                   window.location.replace("login.php");
+                 alert("Verfiy account done, you may change passsowrd now");
+                   window.location.replace("changePass.php");
              </script>
              <?php
         }
@@ -61,7 +61,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Verification</title>
+    <title>Change Password</title>
 </head>
 <body style="background-color: #90ee90;">
     <div class="container border border-dark rounded mt-5" style="background-color: white;">
@@ -69,12 +69,14 @@
             <h2 class="text-center text-light border-bottom pb-2">Change Password</h2>
         </div>
         <form action="#" method="POST">
-        <div class="input-group mt-3" style="justify-content: center;">
-            <label class="me-3 fw-bold">OTP</label>
-            <input type="text" id="otp" class="w-50" name="otp_code" autocomplete="off"> 
-			<p class="error"> <?php if (isset($errors['otp_code'])) echo $errors ['otp_code'];?> </p>
-			<p class="error"> <?php if (isset($errors['otp_code1'])) echo $errors ['otp_code1'];?> </p>
-        </div>
+        <div class="input-group mt-5 row">
+            <div class="text-center" style="justify-content: center;">
+                <label class="me-3 fw-bold">OTP</label>
+                <input type="text" id="otp" class="w-50" name="otp_code" autocomplete="off"> 
+            </div>
+            <p class="error text-danger m-0 text-center"> <?php if (isset($errors['otp_code'])) echo $errors ['otp_code'];?> </p>
+		    <p class="error text-danger m-0 text-center"> <?php if (isset($errors['otp_code1'])) echo $errors ['otp_code1'];?> </p> 
+        </div>   
         <div class="row mt-3 p-3">
             <div class="col"></div>
             <div class="col-4">

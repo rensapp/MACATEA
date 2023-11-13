@@ -96,16 +96,16 @@
         <div class="row p-3 border-bottom border-dark" style="background-color: #008000">
             <h2 class="text-center text-light border-bottom pb-2">Account Verification</h2>
         </div>
-        <div class="row p-4">
-            <form action="#" method="POST" name="register">
-            <div class="input-group mt-3" style="justify-content: center;">
-                <label class="me-3 fw-bold">Email</label>
-                <input type="email" id="email_address" class="w-50" name="email" autocomplete="off">
-                <p class="error"> <?php if (isset($errors['email1'])) echo $errors ['email1'];?> </p>
-                <p class="error"> <?php if (isset($errors['email_login'])) echo $errors ['email_login'];?></p>
-            </div>
+        <form action="#" method="POST" name="register">
+        <div class="input-group mt-5 row">
+        <div class="text-center" style="justify-content: center;">
+            <label class="me-3 fw-bold">Email</label>
+            <input type="email" id="email_address" class="w-50" name="email" autocomplete="off">
         </div>
-        <div class="row mt-3 p-3">
+            <p class="error text-center text-danger mt-2"> <?php if (isset($errors['email1'])) echo $errors ['email1'];?> </p>
+            <p class="error text-center text-danger mb-1"> <?php if (isset($errors['email_login'])) echo $errors ['email_login'];?></p>
+        </div>
+        <div class="row p-3 border">
             <div class="col"></div>
             <div class="col-4">
                 <button type="submit" class="btn w-100 rounded text-light" style="background-color: #008000;" name="register">Submit</button>

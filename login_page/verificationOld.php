@@ -70,18 +70,16 @@
             <h2 class="text-center text-light border-bottom pb-2">Account Verification</h2>
         </div>
         <form action="#" method="POST">
-        <div class="input-group mt-5 row">
-            <div class="text-center" style="justify-content: center;">
-                <label class="me-3 fw-bold">OTP</label>
-                <input type="text" id="otp" class="w-50" name="otp_code" autocomplete="off"> 
-            </div>
-			<p class="error text-danger text-center m-0"> <?php if (isset($errors['otp_code'])) echo $errors ['otp_code'];?> </p>
-			<p class="error text-danger text-center mb-1"> <?php if (isset($errors['otp_code1'])) echo $errors ['otp_code1'];?> </p>
+        <div class="input-group mt-3" style="justify-content: center;">
+            <label class="me-3 fw-bold">OTP</label>
+            <input type="text" id="otp" class="w-50" name="otp_code" autocomplete="off"> 
+			<p class="error"> <?php if (isset($errors['otp_code'])) echo $errors ['otp_code'];?> </p>
+			<p class="error"> <?php if (isset($errors['otp_code1'])) echo $errors ['otp_code1'];?> </p>
         </div>
-		<div class="row p-3">
+		<div class="row mt-3 p-3">
             <div class="col"></div>
             <div class="col-4">
-                <button type="submit" class="btn btn-dark w-100 rounded text-light" style="background-color: #008000;" name="verify">Submit</button>
+                <button type="submit" class="btn btn-dark w-100 rounded text-light" style="background-color: #008000;" name="register">Submit</button>
             </div>
             <div class="col"></div>
         </div>
