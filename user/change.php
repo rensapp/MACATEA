@@ -13,7 +13,73 @@ if (!isLoggedIn()) {
 	header('location:../login_page/login.php');
 	}
 }
-?> 
+?>
+<?php
+	$id=$_SESSION['user']['id'];
+	$res=mysqli_query($db,"SELECT * FROM users WHERE id='$id' ");
+	while($crow=mysqli_fetch_array($res)) {
+
+if(isset($_POST["cancel"]))
+{
+	?>
+	<script type="text/javascript">
+    window.location="MyAccount.php?id=<?php echo $crow["id"]; ?>";
+	</script>
+	<?php
+}
+?>
+
+<?php
+$connect = mysqli_connect ("localhost","root","","mactea");
+
+
+if (isset($_POST["Confirm"])) {
+  $op = $_POST['oldpw'];
+  $np = $_POST['newpw'];
+  $cp = $_POST['confirmpw'];
+
+  if (empty($op)) { 
+    $errors['password1'] = "Please enter your password."; 
+  }
+  if (empty($np)) { 
+    $errors['password2'] = "Please enter your password."; 
+  }
+  if (empty($cp)) { 
+    $errors['passwor3'] = "Please enter your password."; 
+  }
+  
+  if (strlen ($np)<8){
+    $errors['password4'] = "Password must be atleast 8 characters."; 
+  }else {
+    $op = md5 ($_POST ['oldpw']);
+    $np = md5 ($_POST['newpw']);
+    $cp = md5 ($_POST['confirmpw']);
+ 
+    if ($np==$cp){
+      $query="SELECT * FROM users WHERE password='$op'";
+      $result=mysqli_query ($connect,$query);
+      $count=mysqli_num_rows($result);
+      if ($count>0) {
+        $query="UPDATE users SET password='$np' WHERE password='$op'";
+        mysqli_query ($connect, $query);
+        echo '<script>alert("Password Updated Successfully")</script>';
+?>
+<script type="text/javascript">
+  window.location="MyProfile.php?id=<?php echo $crow["id"]; ?>";
+</script>
+<?php
+      }else {
+        $errors['password5'] = "Old password does not match."; 
+      }
+    }else {
+	    $errors['password6'] = "Two passwords do not match."; 
+    }
+  }
+}
+?>
+ <?php
+}        
+        ?> 
 <style>
 		button[name=cancel] {
 			background: #B22222;
@@ -55,17 +121,29 @@ if (!isLoggedIn()) {
     
     <div class="row mb-3 p-3">
       <form method="post" action="">
-      <div class="input-group mb-2 igroup">
-        <label class="ms-3 me-3 mt-2">Old Password</label>
-        <input type="password" class="w-50" style="margin-left: 25px;" name="oldpw">
+      <div class="input-group row mb-2 igroup">
+        <div class="text-center">
+          <label class="mx-3 my-0">Old Password</label>
+          <input type="password" class="w-50" style="margin-left: 25px;" name="oldpw">
+        </div>
+        <p class="error text-danger text-center m-0"> <?php if (isset($errors['password1'])) echo $errors ['password1'];?></p>
+        <p class="error text-danger text-center m-0"> <?php if (isset($errors['password5'])) echo $errors ['password5'];?></p>
       </div>
-      <div class="input-group mb-2 igroup">
-        <label class="ms-3 me-3 mt-2">New Password</label>
-        <input type="password" class="w-50" style="margin-left: 22px;" name="newpw">
+      <div class="input-group row mb-2 igroup">
+        <div class="text-center">
+          <label class="mx-3 my-0">New Password</label>
+          <input type="password" class="w-50" style="margin-left: 22px;" name="newpw">
+        </div>
+          <p class="error text-danger text-center m-0"> <?php if (isset($errors['password2'])) echo $errors ['password2'];?></p>
+		      <p class="error text-danger text-center m-0"> <?php if (isset($errors['password4'])) echo $errors ['password4'];?></p>
       </div>
-      <div class="input-group igroup">
-        <label class="ms-3 me-3 mt-2">Confirm Password</label>
-        <input type="password" class="w-50" name="confirmpw">
+      <div class="input-group row igroup">
+        <div class="text-center">
+          <label class="mx-3 my-0">Confirm Password</label>
+          <input type="password" class="w-50" name="confirmpw">
+        </div>
+          <p class="error text-danger text-center m-0"> <?php if (isset($errors['password3'])) echo $errors ['password3'];?></p>
+          <p class="error text-danger text-center m-0"> <?php if (isset($errors['password6'])) echo $errors ['password6'];?></p>
       </div>
     </div>
 
@@ -93,66 +171,5 @@ if (!isLoggedIn()) {
 </body>
 </html>
 
-<?php
-	$id=$_SESSION['user']['id'];
-	$res=mysqli_query($db,"SELECT * FROM users WHERE id='$id' ");
-	while($crow=mysqli_fetch_array($res))
-	{
-	?>
-<?php
-if(isset($_POST["cancel"]))
-{
-	?>
-	<script type="text/javascript">
-window.location="MyAccount.php?id=<?php echo $crow["id"]; ?>";
-	</script>
-	<?php
-}
-?>
 
-<?php
-$connect = mysqli_connect ("localhost","root","","mactea");
-
-
-if (isset($_POST["Confirm"]))
-{$np = ($_POST['newpw']);
-if (strlen ($np)<8){
-echo '<script>alert("Password must be at least 8 characters")</script>';
-}else {
-
- $op = md5 ($_POST ['oldpw']);
- $np = md5 ($_POST['newpw']);
- $cp = md5 ($_POST['confirmpw']);
- 
-  if ($np==$cp)
-  {
-   
-   $query="SELECT * FROM users WHERE password='$op'";
-   $result=mysqli_query ($connect,$query);
-   $count=mysqli_num_rows($result);
-   if ($count>0) {
-   $query="UPDATE users SET password='$np' WHERE password='$op'";
-   mysqli_query ($connect, $query);
-   echo '<script>alert("Password Updated Successfully")</script>';
-   ?>
-<script type="text/javascript">
-window.location="MyProfile.php?id=<?php echo $crow["id"]; ?>";
-</script>
-<?php
-  }
-  else {
-      echo '<script>alert("Old Password Does Not Match")</script>';
-  }
- }
-  else 
-  {
-	  echo '<script>alert("The two passwords do not match")</script>';
-   
-  }
-}
-}
-?>
- <?php
-            }        
-        ?>
  
