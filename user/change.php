@@ -126,24 +126,24 @@ if (isset($_POST["Confirm"])) {
           <label class="mx-3 my-0">Old Password</label>
           <input type="password" class="w-50" style="margin-left: 25px;" name="oldpw">
         </div>
-        <p class="error text-danger text-center m-0"> <?php if (isset($errors['password1'])) echo $errors ['password1'];?></p>
-        <p class="error text-danger text-center m-0"> <?php if (isset($errors['password5'])) echo $errors ['password5'];?></p>
+        <p class="error text-danger text-center my-0" style="margin-left: 150px;"> <?php if (isset($errors['password1'])) echo $errors ['password1'];?></p>
+        <p class="error text-danger text-center my-0" style="margin-left: 150px;"> <?php if (isset($errors['password5'])) echo $errors ['password5'];?></p>
       </div>
       <div class="input-group row mb-2 igroup">
         <div class="text-center">
           <label class="mx-3 my-0">New Password</label>
           <input type="password" class="w-50" style="margin-left: 22px;" name="newpw">
         </div>
-          <p class="error text-danger text-center m-0"> <?php if (isset($errors['password2'])) echo $errors ['password2'];?></p>
-		      <p class="error text-danger text-center m-0"> <?php if (isset($errors['password4'])) echo $errors ['password4'];?></p>
+          <p class="error text-danger text-center my-0" style="margin-left: 150px;"> <?php if (isset($errors['password2'])) echo $errors ['password2'];?></p>
+		      <p class="error text-danger text-center my-0" style="margin-left: 150px;"> <?php if (isset($errors['password4'])) echo $errors ['password4'];?></p>
       </div>
       <div class="input-group row igroup">
         <div class="text-center">
           <label class="mx-3 my-0">Confirm Password</label>
           <input type="password" class="w-50" name="confirmpw">
         </div>
-          <p class="error text-danger text-center m-0"> <?php if (isset($errors['password3'])) echo $errors ['password3'];?></p>
-          <p class="error text-danger text-center m-0"> <?php if (isset($errors['password6'])) echo $errors ['password6'];?></p>
+          <p class="error text-danger text-center my-0" style="margin-left: 150px;"> <?php if (isset($errors['password3'])) echo $errors ['password3'];?></p>
+          <p class="error text-danger text-center my-0" style="margin-left: 150px;"> <?php if (isset($errors['password6'])) echo $errors ['password6'];?></p>
       </div>
     </div>
 

@@ -90,8 +90,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Account Verification</title>
 </head>
-
-<body style="background-color: #90ee90;">
+<style>
+    body, html {
+         overflow-x: hidden;
+    }
+</style>
+<body style="background-image: url('../images/macteabg.png'); background-repeat: no-repeat;">
     <div class="container border border-dark rounded mt-5" style="background-color: white;">
         <div class="row p-3 border-bottom border-dark" style="background-color: #008000">
             <h2 class="text-center text-light border-bottom pb-2">Account Verification</h2>
@@ -105,7 +109,7 @@
             <p class="error text-center text-danger mt-2"> <?php if (isset($errors['email1'])) echo $errors ['email1'];?> </p>
             <p class="error text-center text-danger mb-1"> <?php if (isset($errors['email_login'])) echo $errors ['email_login'];?></p>
         </div>
-        <div class="row p-3 border">
+        <div class="row p-3">
             <div class="col"></div>
             <div class="col-4">
                 <button type="submit" class="btn w-100 rounded text-light" style="background-color: #008000;" name="register">Submit</button>
