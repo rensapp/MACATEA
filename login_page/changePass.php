@@ -1,4 +1,10 @@
 <?php include('../includes/functions.php');
+
+if(!isset($_SERVER['HTTP_REFERER'])){
+// redirect them to your desired location
+header('location:../login_page/login.php');
+exit;
+}
  ?>
 <head>
   <link rel="icon" href="../images/mactea.png">
