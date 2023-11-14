@@ -130,7 +130,7 @@ if(isset($_GET['delete'])){
       <?php
       }
       }else{
-         echo '<p class="empty fw-semibold h3">No Orders Placed Yet!</p>';
+         echo '<p class="empty fw-semibold h3 text-center mt-5">NO ORDERS TO BE DELIVER OR PICK-UP YET</p>';
       }
       ?>
 
