@@ -58,7 +58,7 @@
         <input type="hidden" name="products" value="<?php echo $allItems ?>">
         <input type="hidden" name="grand_total" value="<?php echo $grand_total ?>">
         <input type="hidden" name="clear" value="<?php echo $staff_id ?>">
-        <input type="hidden" name="status" value="<?php echo"preparing"; ?>">
+        <input type="hidden" name="status" value="<?php echo"Preparing"; ?>">
         <input type="hidden" name="br_order" id="inputBrNum">
         <input type="hidden" name="pmode" value="N/A">
         <input type="hidden" name="delivery_type" value="N/A">

@@ -109,7 +109,7 @@ if(isset($_GET['delete'])){
                <select name="update_orderStatus" class="drop-down mb-3 form-select" onchange="enableUpdateButton(this)">
                   <option value="" selected disabled><?= $fetch_orders['order_status']; ?></option>
                   <?php if($fetch_orders['payment_mode'] == "POS"){ ?>
-                     <option value="completed" style="color:black;">Complete</option>
+                     <option value="Completed" style="color:black;">Complete</option>
                   <?php }else{ ?>
                      <option value="Deliver-pickup" style="color:black;">To deliver or to pick-up</option>
                   <?php } ?>
