@@ -63,7 +63,6 @@
         <input type="hidden" name="pmode" value="N/A">
         <input type="hidden" name="delivery_type" value="N/A">
         
-        
         <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
             <button type="submit" name="confirm" class="btn btn-success">Confirm</button>

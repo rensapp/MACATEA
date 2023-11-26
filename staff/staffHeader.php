@@ -1,3 +1,9 @@
+<?php 
+$select_id= $conn->prepare("SELECT * FROM `users` WHERE id = ?");
+$select_id->execute([$staff_id]);
+$fetch_id = $select_id->fetch(PDO::FETCH_ASSOC);
+$staff_brNum = $fetch_id['branch_num'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +29,16 @@
                 data-aos="fade-right" data-aos-delay="50"
                 src="../images/mactea.png"
                 height="60" width="60" />
-                Staff Page
+                Staff -
+                <?php
+                if($staff_brNum == 1){
+                    echo 'San Antonio Branch';
+                } elseif($staff_brNum == 2){
+                    echo 'Luna Branch';
+                } else {
+                    echo 'Calendola Branch';
+                }
+                ?>
         </a>
         <button 
             type="button"
