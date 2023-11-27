@@ -58,6 +58,8 @@ if(isset($_POST["action"]) && isset($_POST["action"])=="order")
 
     $placed_on = date("m/d/Y g:i a");
 
+    $nMessage = "There is a Pending order";
+
     $order_branch = $_POST["order_branch"];
 
     $delete_stmt = $conn->prepare("DELETE FROM cart WHERE customer_id = $id");
@@ -82,15 +84,21 @@ if(isset($_POST["action"]) && isset($_POST["action"])=="order")
     $insert_stmt->bindParam(":ord_br",$order_branch);
     $insert_stmt->bindParam(":pay_s",$payment_status);
     $insert_stmt->bindParam(":prod_q",$productQty);
-
     $insert_stmt->execute();
 
     $order_id = $conn->lastInsertId();
+
+    $insert_notif_stmt=$conn->prepare("INSERT INTO notification(nbrId,nMessage,nStatus) VALUES(:nbr_id,:n_message,:n_status)");
+    $insert_notif_stmt->bindParam(":nbr_id",$order_branch);
+    $insert_notif_stmt->bindParam(":n_message",$nMessage);
+    $insert_notif_stmt->bindValue(":n_status", 1);
+    $insert_notif_stmt->execute();
 
     $update_stmt = $conn->prepare("UPDATE users SET delivery_type = :delivery_reset WHERE id = :ct_id");
     $update_stmt->bindParam(':delivery_reset', $delivery_reset);
     $update_stmt->bindParam(':ct_id', $id);
     $update_stmt->execute();
+
 
     if($pmode == "online"){
         include('../payment/createPayment.php');

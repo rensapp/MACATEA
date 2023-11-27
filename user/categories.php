@@ -99,7 +99,7 @@
                     <!-- </a> -->
 				</div>
 			
-				<div class="card">
+				<div class="card z-n1">
                     <!-- <a href="#" class="text-center"> -->
 					    <img class="card-img-top <?php if($cat7 == true){?> active_opacity <?php } ?>" onclick="window.location.href = '../user/MacteaSpecial.php'" src="../product/Mactea_Special.jpg">
                     <div class="card-body">
@@ -109,7 +109,7 @@
 				</div>
                 
                 
-				<div class="card">
+				<div class="card z-n1">
 					    <img class="card-img-top <?php if($cat8 == true){?> active_opacity <?php } ?>" onclick="window.location.href = '../user/MacCoffee_seriesE.php?category=8'" src="../product/MacCoffee.jpg">
                     <div class="card-body">
 						<h5 class="card-title <?php if($cat8 == true){?> active_border <?php } ?>">Mac Coffee</h5>

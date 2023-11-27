@@ -41,7 +41,7 @@ if (!isLoggedIn()) {
    if($select_orders->rowCount() > 0){
 	  while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){ 
 ?>
-		<div class="box col-lg-3 col-md-4 col-sm-6 border w-100 rounded border-black p-2">
+		<div class="box col-lg-3 col-md-4 col-sm-6 border rounded border-black p-2">
 			<!-- style="border: 1px solid black; background: white; width: 30%; border-radius: 25px; margin: 10px;" -->
 			<div class="">	
 				<p class="border-bottom border-dark text-center"> Placed on : <span class="text-danger fw-bold"><?= $fetch_orders['placed_on']; ?></span> </p>

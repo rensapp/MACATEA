@@ -38,14 +38,14 @@ if ($userResult) {
 
     if (isset($_POST['updateBr'])) {
         $branch_num = $_POST['branch_num'];
-        $branch_num = filter_var($branch_num, FILTER_SANITIZE_STRING);
+        $branch_num = filter_var($branch_num, FILTER_SANITIZE_NUMBER_INT);
 
         $update = "UPDATE users SET branch_num = ? WHERE id = ?";
         $stmt = $conn->prepare($update);
         $stmt->execute([$branch_num, $id]);
 
-        header('Location: checkout.php');
-        // exit();
+        echo '<script>window.location.href="../user/checkout.php";</script>';
+        exit();
     }
     ?>
 
